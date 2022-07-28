@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Sahil Sharma</title>
+    <link>https://anonhan.github.io/Portfolio/post/</link>
+    <description>Recent content in Projects on Sahil Sharma</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 02 Mar 2017 12:00:00 -0500</lastBuildDate><atom:link href="https://anonhan.github.io/Portfolio/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Project-1: Covid-19 Analysis</title>
+      <link>https://anonhan.github.io/Portfolio/post/project-1/</link>
+      <pubDate>Thu, 21 Jul 2022 10:58:08 -0400</pubDate>
+      
+      <guid>https://anonhan.github.io/Portfolio/post/project-1/</guid>
+      <description>Introduction: The disease COVID-19, which is brought on by the coronavirus SARS-CoV-2, which first surfaced in 2019, is well known to all. COVID-19 is severe and had caused the deaths of millions of people in the world, left millions of families to strive, and plunged the economy of several countries. Objective: In this project, my whole aim was to present the data visually to find out the answers to the following questions: How many cases were repored in the different countries?</description>
+    </item>
+    
+    <item>
+      <title>Project-2: Rotten Tomatoes Web Scrapper</title>
+      <link>https://anonhan.github.io/Portfolio/post/project-2/</link>
+      <pubDate>Thu, 21 Jul 2022 10:58:08 -0400</pubDate>
+      
+      <guid>https://anonhan.github.io/Portfolio/post/project-2/</guid>
+      <description>Introduction: We all data enthusiasts know the one of the famous saying that Data is the new Oil. But there comes a big question in my mind every time I come across with it that:
+How would you get this oil? How would you mine it? How much amount do we need to pay? Is there any special machinary used to extract this data? Objective: With all these questions in my mind, I came up with an idea to build a web scrapper to scrape the reviews.</description>
+    </item>
+    
+    <item>
+      <title>Project-3: American Bank Analysis</title>
+      <link>https://anonhan.github.io/Portfolio/post/project-3/</link>
+      <pubDate>Thu, 21 Jul 2022 10:58:08 -0400</pubDate>
+      
+      <guid>https://anonhan.github.io/Portfolio/post/project-3/</guid>
+      <description>Introduction: The banking industry heavily relies on big data analytics. Where real-time analysis of the data helps banks to identify fraudulent transactions, and big data analysis to identify customer spending behavior and loan defaulters.
+In this project I worked on a sample of the banking data, which had information about the customers of the American Bank.
+Objective: The aim of this project was to answer the question asked by the bank manager and other stakeholders, such as:</description>
+    </item>
+    
+  </channel>
+</rss>
