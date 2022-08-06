@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Pizza Store Analysis | Sahil Sharma</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="A comprehensive case study using SQL">
+    <meta name="generator" content="Hugo 0.100.1" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="https://anonhan.github.io/Portfolio/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Pizza Store Analysis" />
+<meta property="og:description" content="A comprehensive case study using SQL" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://anonhan.github.io/Portfolio/post/project-4/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-08-05T10:58:08-04:00" />
+<meta property="article:modified_time" content="2022-08-05T10:58:08-04:00" /><meta property="og:site_name" content="Sahil Sharma" />
+
+<meta itemprop="name" content="Pizza Store Analysis">
+<meta itemprop="description" content="A comprehensive case study using SQL"><meta itemprop="datePublished" content="2022-08-05T10:58:08-04:00" />
+<meta itemprop="dateModified" content="2022-08-05T10:58:08-04:00" />
+<meta itemprop="wordCount" content="1327">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Pizza Store Analysis"/>
+<meta name="twitter:description" content="A comprehensive case study using SQL"/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('https://anonhan.github.io/Portfolio/images/Pizza.jpg');">
+    <div class="bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://anonhan.github.io/Portfolio/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Sahil Sharma
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://anonhan.github.io/Portfolio/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://anonhan.github.io/Portfolio/contact/" title="Contact page">
+              Contact
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://anonhan.github.io/Portfolio/post/" title="Projects page">
+              Projects
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+<div class="ananke-socials">
+  
+    <a href="https://github.com/anonhan" target="_blank" class="github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="GitHub link" rel="noopener" aria-label="follow on GitHub——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Pizza Store Analysis</h1>
+          
+            <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+              A comprehensive case study using SQL
+            </h2>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        PROJECTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Pizza Store Analysis</h1>
+      
+      <p class="tracked">
+        By <strong>Sahil</strong>
+      </p>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2022-08-05T10:58:08-04:00">August 5, 2022</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h3 id="introduction">Introduction</h3>
+<p>Danny was scrolling through his Instagram feed when something really caught his eye - “80s Retro Styling and Pizza Is The Future!”</p>
+<p>Danny was sold on the idea, but he knew that pizza alone was not going to help him get seed funding to expand his new Pizza Empire - so he had one more genius idea to combine with it - he was going to Uberize it - and so Pizza Runner was launched!</p>
+<p>Danny started by recruiting “runners” to deliver fresh pizza from Pizza Runner Headquarters (otherwise known as Danny’s house) and also maxed out his credit card to pay freelance developers to build a mobile app to accept orders from customers.</p>
+<h3 id="quick-tip">Quick Tip</h3>
+<p>How you can make use of this case study effectively?</p>
+<p>The best approach to start with these questions is first trying to understand the question that is being asked, writing down the requirements of the problem and then jumping back to your SQL engine to write the query. However, I have also provided the <strong>hints</strong> for some of the questions.
+Explantion is also provided for some of the queries for making the things eaiser to understand.</p>
+<h5 id="note-for-each-problem-there-are-various-ways-to-formulate-the-same-sql-query-but-the-results-shouldnt-vary"><strong>NOTE</strong>: For each problem, there are various ways to formulate the same SQL query, but the results shouldn&rsquo;t vary.</h5>
+<h3 id="database-schema">Database Schema</h3>
+<p>There are six tables in total namely <strong>runners</strong>, <strong>customer_orders</strong>, <strong>runner_orders</strong>, <strong>pizza_names</strong>, <strong>pizza_recipes</strong>, and <strong>pizza_toppings</strong>.</p>
+<h5 id="entity-relationship-diagram">Entity Relationship Diagram</h5>
+<figure><img src="https://anonhan.github.io/Portfolio/images/Pizza_runner/entity.png"/>
+</figure>
+
+<p>More about tables and relationships here: <a href="https://8weeksqlchallenge.com/case-study-2/">pizza runner</a></p>
+<h3 id="case-study-questions">Case Study Questions</h3>
+<p>This case study has LOTS of questions - they are broken up by area of focus including:</p>
+<ul>
+<li>Pizza Metrics</li>
+<li>Runner and Customer Experience</li>
+<li>Ingredient Optimisation</li>
+<li>Pricing and Ratings</li>
+<li>Bonus DML Challenges (DML = Data Manipulation Language)</li>
+</ul>
+<h5 id="a-pizza-metrics">A. Pizza Metrics</h5>
+<ol>
+<li>
+<p>How many pizzas were ordered?</p>
+<p>To answer this, first we need to understand that a customer can order multiple pizzas in a single order, as the requirement is to count the total number of pizzas that were ordered, so we have to include all the orders with the same order id.</p>
+<pre><code> SELECT  COUNT(order_id) AS Total_orders
+ FROM    customer_orders;
+</code></pre>
+<figure><img src="https://anonhan.github.io/Portfolio/images/Pizza_runner/runner_orders.png"/>
+    </figure>
+
+<p><em>Answer</em>: The total number of order was 14.</p>
+</li>
+<li>
+<p>How many unique customer orders were made?</p>
+<p>Now, in this question we have to answer the number of unique orders that were made by the customers, unlike the previous question where we even took all the orders with same order_id.</p>
+<pre><code> SELECT  COUNT(DISTINCT (order_id)) AS Total_orders
+ FROM    customer_orders;
+</code></pre>
+<figure><img src="https://anonhan.github.io/Portfolio/images/Pizza_runner/A2.png"/>
+    </figure>
+
+<p><em>Answer</em>: The total number of order was 10, which is correct.</p>
+</li>
+<li>
+<p>How many successful orders were delivered by each runner?</p>
+<p>Hint: If the cancellation column in runner_orders table does not contain any information regarding the cancellation, then it means that a particular order was cancelled.</p>
+<p>We can also use duration (it&rsquo;s quite simple, you can try it out), so let&rsquo;s see how to get the results using the cancellation column.</p>
+<p>Let&rsquo;s have look at the runner_orders first.</p>
+<pre><code> SELECT * FROM runner_orders;
+</code></pre>
+<figure><img src="https://anonhan.github.io/Portfolio/images/Pizza_runner/runner_order.png"/>
+    </figure>
+
+<p>As we can see under the <em>cancellation</em> column categorical values are there, and some of the values are missing. So, we need to clean this before moving ahead.</p>
+<p>Replace everything with NULL except the cell that contain information regarding the cancellation of the order.</p>
+<pre><code> UPDATE  runner_orders 
+     SET cancellation = NULL 
+ WHERE   cancellation NOT LIKE &quot;%cancel%&quot;;
+
+ SELECT * FROM runner_orders;
+</code></pre>
+<figure><img src="https://anonhan.github.io/Portfolio/images/Pizza_runner/A3_runner_orders.png"/>
+    </figure>
+
+<p>The <em>cancellation</em> column looks good now. Let&rsquo;s write the quer now.</p>
+<pre><code> SELECT 
+     runner_id, COUNT(*) AS successful_orders
+ FROM
+     runner_orders
+ WHERE
+     cancellation IS NULL
+ GROUP BY runner_id;
+</code></pre>
+<figure><img src="https://anonhan.github.io/Portfolio/images/Pizza_runner/A3.png"/>
+    </figure>
+
+<p><em>Answer</em>: <strong>Runner 1</strong> had the highest number of successfull delivered orders.</p>
+</li>
+<li>
+<p>How many of each type of pizza was delivered?</p>
+<p>Hint: Here we need to fetch the successfully delivered orders only. As the demand of the question is type of pizza, which mean we also need to get the name of the pizza using SQL JOIN.</p>
+<pre><code> SELECT 
+     PN.pizza_name, COUNT(CO.pizza_id) AS Total_orders
+ FROM
+     runner_orders RO
+         JOIN
+     customer_orders CO ON CO.order_id = RO.order_id
+         JOIN
+     pizza_names PN ON PN.pizza_id = CO.pizza_id
+ WHERE
+     RO.cancellation IS NULL
+ GROUP BY 1;
+</code></pre>
+<p><em>Answer</em> <figure><img src="https://anonhan.github.io/Portfolio/images/Pizza_runner/A4.png"/>
+</figure>
+</p>
+<p>9 Meatlovers Pizzas were delivered, and 3 Veg Pizzas were successfully delivered by the runners.</p>
+</li>
+<li>
+<p>How many Vegetarian and Meatlovers were ordered by each customer?</p>
+<p>This one is quite easy, we just to need to get the customer_id, pizza_name and the count of pizza_id as number of pizzas ordered and we will use group by customer_id, which will return the total number of pizzas ordered from each customer_id.</p>
+<pre><code> SELECT 
+     CO.customer_id,
+     PN.Pizza_name,
+     COUNT(CO.pizza_id) AS Total_orders
+ FROM
+     customer_orders CO
+         JOIN
+     Pizza_names PN ON PN.pizza_id = CO.pizza_id
+ GROUP BY 1 , 2
+ ORDER BY 1;
+</code></pre>
+<p><em>Answer</em> <figure><img src="https://anonhan.github.io/Portfolio/images/Pizza_runner/A5.png"/>
+</figure>
+</p>
+</li>
+<li>
+<p>What was the maximum number of pizzas delivered in a single order?</p>
+<p>One thing to know before jumping into the solution is that, there could be more than one order with same number of maximum orders, so we need to fetch all those records as well.</p>
+<p>Here we will use Common Table Expressions (CTE). First using CTE we will try to get the number of orders per order_id, and we will take only those records into consideration that were delivered successfully. Then we will select only those records from CTE which will have total order count equals to the maximum order.</p>
+<pre><code> WITH T1 AS (
+     SELECT 
+ 	CO.order_id,
+ 	COUNT(CO.order_id) AS total_orders
+     FROM
+ 	customer_orders CO JOIN runner_orders RN ON RN.order_id = CO.order_id   
+     WHERE 
+ 	cancellation IS NULL  	
+     GROUP BY 1
+ )
+ SELECT  
+     order_id, total_orders 
+ FROM    
+     T1 
+ WHERE 
+     total_orders = (SELECT MAX(total_orders) FROM T1);
+</code></pre>
+<p><em>Answer</em> <figure><img src="https://anonhan.github.io/Portfolio/images/Pizza_runner/A6.png"/>
+</figure>
+</p>
+<p>order_id 4 had the highest number of pizza order, and it was the only order_id with total_orders=3.</p>
+</li>
+<li>
+<p>For each customer, how many delivered pizzas had at least 1 change and how many had no changes?</p>
+<p>Let&rsquo;s first see how do the records in customer_table looks like.</p>
+<pre><code> SELECT * FROM customer_orders;
+</code></pre>
+<figure><img src="https://anonhan.github.io/Portfolio/images/Pizza_runner/cust_orders.png"/>
+    </figure>
+
+<p>We can see that both the extras and exclusions columns are not a format to be used without cleaning.</p>
+<pre><code> -- update exlusions column
+ UPDATE customer_orders SET exclusions = NULL WHERE exclusions LIKE &quot;%null%&quot; OR exclusions LIKE &quot;&quot;;
+
+ -- update extras column
+ UPDATE customer_orders SET extras = NULL WHERE extras LIKE &quot;%null%&quot; OR extras LIKE &quot;&quot;;
+
+ -- Cleaned Table
+ SELECT * FROM customer_orders;
+</code></pre>
+<figure><img src="https://anonhan.github.io/Portfolio/images/Pizza_runner/cust_orders_c.png"/>
+    </figure>
+
+<p>Let&rsquo;s answer our question now. We will use the simple logic here, if the exlusions and extras is NULL then it means the changes were not made otherwise we can say that the atleast one change was made during booking of the order.</p>
+<pre><code> SELECT 
+     customer_id,
+     SUM(CASE
+         WHEN 
+             exclusions IS NULL AND extras IS NULL 
+         THEN 1 
+             ELSE 0
+     END) AS No_changes_made,
+     SUM(CASE
+         WHEN
+             exclusions IS NOT NULL OR extras IS NOT NULL
+         THEN 1
+             ELSE 0
+     END) AS Changes_made
+ FROM
+     customer_orders
+ GROUP BY 1;
+</code></pre>
+<p><em>Answer</em> <figure><img src="https://anonhan.github.io/Portfolio/images/Pizza_runner/A7.png"/>
+</figure>
+</p>
+<p>If we try to match it with the table in the database, we could see that the results are correct.</p>
+</li>
+<li>
+<p>How many pizzas were delivered that had both exclusions and extras?</p>
+<p>It is very much similar to the previous quesion, we just need to replace the OR with AND in the change_made column.</p>
+<pre><code> SELECT 
+     pizza_id,
+     SUM(CASE
+             WHEN
+                 exclusions IS NOT NULL
+                 AND extras IS NOT NULL
+             THEN 1
+             ELSE 0
+         END) AS Changes_made
+ FROM
+     customer_orders
+ GROUP BY 1;
+</code></pre>
+<p><em>Answer</em> <figure><img src="https://anonhan.github.io/Portfolio/images/Pizza_runner/A8.png"/>
+</figure>
+
+Only the Meatlovers Pizza had both the extras and exclusions.</p>
+</li>
+<li>
+<p>What was the total volume of pizzas ordered for each hour of the day?</p>
+<p>We can use HOUR() function of SQL to get all the records in a particular hour of the day.</p>
+<pre><code> SELECT 
+     HOUR(order_time) AS Hour, 
+     COUNT(order_id) AS Total_orders
+ FROM
+     customer_orders
+ GROUP BY 1
+ ORDER BY 1 ASC;
+</code></pre>
+<p><em>Answer</em> <figure><img src="https://anonhan.github.io/Portfolio/images/Pizza_runner/A9.png"/>
+</figure>
+
+We can obeserve that most of the orders were comming at 1pm, 6pm, 9pm and 11pm.</p>
+</li>
+<li>
+<p>What was the volume of orders for each day of the week?</p>
+<p>In order to get the name of the each day of the week, we can use DAYNAME() function, which will return the name of the day for the five date.</p>
+<pre><code>SELECT 
+    DAYNAME(order_time) AS Week, 
+    COUNT(order_id) AS Total_orders
+FROM
+    customer_orders
+GROUP BY 1
+ORDER BY 1 ASC;
+</code></pre>
+<p><em>Answer</em> <figure><img src="https://anonhan.github.io/Portfolio/images/Pizza_runner/A10.png"/>
+</figure>
+
+The maximum number of orders were recored on Saturday and Wednesday, which is 5.</p>
+</li>
+</ol>
+<h4 id="final-note-i-am-still-working-on-the-case-studies-and-soon-going-to-upload-the-remaing-answers-so-stay-tuned-and-keep-learning">Final Note: I am still working on the case studies and soon going to upload the remaing answers. So stay tuned and Keep Learning!</h4>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="#E8FDF5 bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://anonhan.github.io/Portfolio/" >
+    &copy;  Sahil Sharma 2022 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+    <a href="https://github.com/anonhan" target="_blank" class="github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="GitHub link" rel="noopener" aria-label="follow on GitHub——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
