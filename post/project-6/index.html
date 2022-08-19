@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Baton Rouge City Crime | Sahil Sharma</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Analysing and Predicting the Baton Rouge City Crime Rate">
+    <meta name="generator" content="Hugo 0.100.1" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="https://anonhan.github.io/Portfolio/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Baton Rouge City Crime" />
+<meta property="og:description" content="Analysing and Predicting the Baton Rouge City Crime Rate" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://anonhan.github.io/Portfolio/post/project-6/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-08-18T10:58:08-04:00" />
+<meta property="article:modified_time" content="2022-08-18T10:58:08-04:00" /><meta property="og:site_name" content="Sahil Sharma" />
+
+<meta itemprop="name" content="Baton Rouge City Crime">
+<meta itemprop="description" content="Analysing and Predicting the Baton Rouge City Crime Rate"><meta itemprop="datePublished" content="2022-08-18T10:58:08-04:00" />
+<meta itemprop="dateModified" content="2022-08-18T10:58:08-04:00" />
+<meta itemprop="wordCount" content="3263">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Baton Rouge City Crime"/>
+<meta name="twitter:description" content="Analysing and Predicting the Baton Rouge City Crime Rate"/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('https://anonhan.github.io/Portfolio/images/Crime.jpg');">
+    <div class="bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://anonhan.github.io/Portfolio/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Sahil Sharma
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://anonhan.github.io/Portfolio/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://anonhan.github.io/Portfolio/contact/" title="Contact page">
+              Contact
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://anonhan.github.io/Portfolio/post/" title="Projects page">
+              Projects
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+<div class="ananke-socials">
+  
+    <a href="https://github.com/anonhan" target="_blank" class="github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="GitHub link" rel="noopener" aria-label="follow on GitHub——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Baton Rouge City Crime</h1>
+          
+            <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+              Analysing and Predicting the Baton Rouge City Crime Rate
+            </h2>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        PROJECTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Baton Rouge City Crime</h1>
+      
+      <p class="tracked">
+        By <strong>Sahil</strong>
+      </p>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2022-08-18T10:58:08-04:00">August 18, 2022</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h3 id="problem-statement">Problem Statement</h3>
+<p>Crime analysis is a law enforcement duty that involves a systematic investigation of patterns and trends in crime and disorder. Pattern information can help law enforcement organizations deploy resources more effectively and aid detectives in locating and apprehending criminals. Crime analysis is also important in developing answers to crime problems and developing crime prevention methods.</p>
+<h3 id="the-dataset">The Dataset</h3>
+<p>This dataset contains crimes reported in Baton Rouge city and investigated by the Baton Rouge Police Department. Burglaries (Vehicle, Residential, and Non-residential), Robberies (Individual and Business), Theft, Narcotics, Vice Crimes, Assault, Nuisance, Battery, Firearm, Homicides, Criminal Damage to Property, Sexual Assaults, and Juvenile are some examples of the crimes committed.</p>
+<h5 id="importing-nccessary-moduels">Importing nccessary moduels</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> seaborn <span style="color:#66d9ef">as</span> sns
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> squarify
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> plotly.express <span style="color:#66d9ef">as</span> ex
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> datetime <span style="color:#66d9ef">as</span> dt
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Graph Settings</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> jupyterthemes <span style="color:#f92672">import</span> jtplot
+</span></span><span style="display:flex;"><span>jtplot<span style="color:#f92672">.</span>style(context<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;talk&#39;</span>, fscale<span style="color:#f92672">=</span><span style="color:#ae81ff">1.4</span>, spines<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, gridlines<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;--&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>style<span style="color:#f92672">.</span>use(<span style="color:#e6db74">&#39;seaborn-darkgrid&#39;</span>)
+</span></span><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>set_palette(<span style="color:#e6db74">&#34;bright&#34;</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># loading data</span>
+</span></span><span style="display:flex;"><span>df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;Legacy_Baton_Rouge_Crime_Incidents.csv&#39;</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Let&#39;s see how many datapoints do we have in the dataset.</span>
+</span></span><span style="display:flex;"><span>df<span style="color:#f92672">.</span>shape
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">490578</span>, <span style="color:#ae81ff">25</span>)
+</span></span></code></pre></div><p>There are more than 490K datapoints, and there are total 25 columns. Let&rsquo;s get some details about these columns.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>info()
+</span></span></code></pre></div><pre tabindex="0"><code>      &lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+      RangeIndex: 490578 entries, 0 to 490577
+      Data columns (total 25 columns):
+      #   Column                     Non-Null Count   Dtype  
+      ---  ------                     --------------   -----  
+      0   FILE NUMBER                483265 non-null  float64
+      1   OFFENSE DATE               490578 non-null  object 
+      2   date                       490578 non-null  object 
+      3   OFFENSE TIME               490578 non-null  object 
+      4   Time1                      490578 non-null  object 
+      5   Time                       490578 non-null  object 
+      6   CRIME                      490578 non-null  object 
+      7   COMMITTED                  490578 non-null  object 
+      8   OFFENSE                    490578 non-null  object 
+      9   OFFENSE DESCRIPTION        490578 non-null  object 
+      10  FULL ADDRESS               483265 non-null  object 
+      11  ADDRESS NUMBER             482448 non-null  float64
+      12  STREET DIRECTION           80244 non-null   object 
+      13  STREET NAME                483265 non-null  object 
+      14  STREET TYPE                466665 non-null  object 
+      15  CITY                       483265 non-null  object 
+      16  STATE                      483265 non-null  object 
+      17  ZIP CODE                   487531 non-null  float64
+      18  DISTRICT                   467456 non-null  object 
+      19  ZONE                       467456 non-null  object 
+      20  SUBZONE                    467456 non-null  object 
+      21  COMPLETE DISTRICT          467456 non-null  object 
+      22  COUNCIL DISTRICT           487263 non-null  float64
+      23  CRIME PREVENTION DISTRICT  487273 non-null  object 
+      24  GEOLOCATION                483265 non-null  object 
+      dtypes: float64(4), object(21)
+      memory usage: 93.6+ MB
+</code></pre><p>Most of the columns are of object type and only four column contains numerical data.</p>
+<p><strong>Let&rsquo;s see what is the percentage of missing values in each column</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>isna()<span style="color:#f92672">.</span>mean()<span style="color:#f92672">*</span><span style="color:#ae81ff">100</span>
+</span></span></code></pre></div><pre><code>FILE NUMBER                   1.490691
+OFFENSE DATE                  0.000000
+date                          0.000000
+OFFENSE TIME                  0.000000
+Time1                         0.000000
+Time                          0.000000
+CRIME                         0.000000
+COMMITTED                     0.000000
+OFFENSE                       0.000000
+OFFENSE DESCRIPTION           0.000000
+FULL ADDRESS                  1.490691
+ADDRESS NUMBER                1.657229
+STREET DIRECTION             83.642968
+STREET NAME                   1.490691
+STREET TYPE                   4.874454
+CITY                          1.490691
+STATE                         1.490691
+ZIP CODE                      0.621104
+DISTRICT                      4.713216
+ZONE                          4.713216
+SUBZONE                       4.713216
+COMPLETE DISTRICT             4.713216
+COUNCIL DISTRICT              0.675734
+CRIME PREVENTION DISTRICT     0.673695
+GEOLOCATION                   1.490691
+dtype: float64
+</code></pre>
+<h5 id="observation">Observation</h5>
+<ul>
+<li>Column Street Direction contains the highest number of missing values, which is 83%. So we won&rsquo;t be able to use this column for our analysis, so we will drop it.</li>
+<li>The remaining columns contains between 0.67% to 4.7% of missing values, which is not much problematic.</li>
+</ul>
+<p><strong>Percentage of missing values in dataset.</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>isna()<span style="color:#f92672">.</span>mean()<span style="color:#f92672">.</span>mean()<span style="color:#f92672">*</span><span style="color:#ae81ff">100</span>
+</span></span></code></pre></div><pre><code>4.7976876256171295
+</code></pre>
+<h5 id="observation-1">Observation</h5>
+<ul>
+<li>4.79% of the values are not present, which is considerable.</li>
+</ul>
+<p><strong>Let&rsquo;s see our target variable</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ax <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>countplot(x<span style="color:#f92672">=</span>df[<span style="color:#e6db74">&#39;COMMITTED&#39;</span>],palette<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;bone&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> ax<span style="color:#f92672">.</span>containers:
+</span></span><span style="display:flex;"><span>    ax<span style="color:#f92672">.</span>bar_label(i,)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><figure><img src="https://anonhan.github.io/Portfolio/images/Crime/untitled_7_0.png"/>
+</figure>
+
+<h5 id="observation-2">Observation:</h5>
+<ul>
+<li>The number of crimes committed by citizens is extremly high as compared to the number of attempts that were made.</li>
+</ul>
+<h3 id="removing-unuseful-columns">Removing unuseful columns</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>drop([<span style="color:#e6db74">&#39;FILE NUMBER&#39;</span>,<span style="color:#e6db74">&#39;OFFENSE DATE&#39;</span>,<span style="color:#e6db74">&#39;Time1&#39;</span>,<span style="color:#e6db74">&#39;OFFENSE TIME&#39;</span>,<span style="color:#e6db74">&#39;FULL ADDRESS&#39;</span>,<span style="color:#e6db74">&#39;GEOLOCATION&#39;</span>,<span style="color:#e6db74">&#39;STREET DIRECTION&#39;</span>,<span style="color:#e6db74">&#39;CITY&#39;</span>,<span style="color:#e6db74">&#39;STATE&#39;</span>,<span style="color:#e6db74">&#39;CRIME PREVENTION DISTRICT&#39;</span>],axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,inplace<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span></code></pre></div><h5 id="how-i-was-able-to-come-up-with-column-names-that-should-be-removed">How I was able to come up with column names, that should be removed?</h5>
+<ul>
+<li>I examined each column separately, and was able to figure out that which one could be useful while analysis, such as some columns had redundant data. I am doing all of this to reduce the size of the dataset to make it process faster while analysis. Moreover, it is also a best practice.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>info()
+</span></span></code></pre></div><pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 490578 entries, 0 to 490577
+Data columns (total 15 columns):
+ #   Column               Non-Null Count   Dtype  
+---  ------               --------------   -----  
+ 0   date                 490578 non-null  object 
+ 1   Time                 490578 non-null  object 
+ 2   CRIME                490578 non-null  object 
+ 3   COMMITTED            490578 non-null  object 
+ 4   OFFENSE              490578 non-null  object 
+ 5   OFFENSE DESCRIPTION  490578 non-null  object 
+ 6   ADDRESS NUMBER       482448 non-null  float64
+ 7   STREET NAME          483265 non-null  object 
+ 8   STREET TYPE          466665 non-null  object 
+ 9   ZIP CODE             487531 non-null  float64
+ 10  DISTRICT             467456 non-null  object 
+ 11  ZONE                 467456 non-null  object 
+ 12  SUBZONE              467456 non-null  object 
+ 13  COMPLETE DISTRICT    467456 non-null  object 
+ 14  COUNCIL DISTRICT     487263 non-null  float64
+dtypes: float64(3), object(12)
+memory usage: 56.1+ MB
+</code></pre>
+<h5 id="the-size-of-the-dataset-had-been-reduced-extremely">The size of the dataset had been reduced extremely.</h5>
+<h3 id="exploratory-data-analysiseda">Exploratory Data Analysis(EDA)</h3>
+<p>Now it&rsquo;s time to ask some good questions to our data, and then see how it reveals the becutiful insights. So grab your notebook and start jotting down the questions that you might
+want to get answer.</p>
+<h5 id="1-what-are-the-most-common-crime-by-category">1. What are the most common Crime by category?</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sort_order <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#39;CRIME&#39;</span>)[<span style="color:#e6db74">&#39;CRIME&#39;</span>]<span style="color:#f92672">.</span>agg(<span style="color:#e6db74">&#39;count&#39;</span>)<span style="color:#f92672">.</span>sort_values(ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>ax <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>countplot(y<span style="color:#f92672">=</span>df[<span style="color:#e6db74">&#39;CRIME&#39;</span>],order<span style="color:#f92672">=</span>sort_order<span style="color:#f92672">.</span>index,palette<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;bone&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> ax<span style="color:#f92672">.</span>containers:
+</span></span><span style="display:flex;"><span>    ax<span style="color:#f92672">.</span>bar_label(i)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><figure><img src="https://anonhan.github.io/Portfolio/images/Crime/untitled_18_0.png"/>
+</figure>
+
+<h5 id="observations">Observations:</h5>
+<ul>
+<li>Theft is the most common crime among criminals. However, we can&rsquo;t say that other constitutes the largest crime rate simply, because it could include other criminal activities.</li>
+<li>Business Robbery was at the least position with 967 number of crimes.</li>
+</ul>
+<h5 id="2-what-are-the-top-10-and-bottom-10-offenses-offense-description">2. What are the top 10 and bottom 10 offenses (offense description)?</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>top_10 <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#39;OFFENSE DESCRIPTION&#39;</span>)[<span style="color:#e6db74">&#39;OFFENSE DESCRIPTION&#39;</span>]<span style="color:#f92672">.</span>agg(<span style="color:#e6db74">&#39;count&#39;</span>)<span style="color:#f92672">.</span>sort_values(ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)[:<span style="color:#ae81ff">10</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">5</span>))
+</span></span><span style="display:flex;"><span>ax <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>barplot(x<span style="color:#f92672">=</span>top_10<span style="color:#f92672">.</span>values, y<span style="color:#f92672">=</span>top_10<span style="color:#f92672">.</span>index,palette<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bone&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> ax<span style="color:#f92672">.</span>containers:
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>bar_label(i)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>bottom_10 <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#39;OFFENSE DESCRIPTION&#39;</span>)[<span style="color:#e6db74">&#39;OFFENSE DESCRIPTION&#39;</span>]<span style="color:#f92672">.</span>agg(<span style="color:#e6db74">&#39;count&#39;</span>)<span style="color:#f92672">.</span>sort_values(ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)[<span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>:]
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">7.5</span>,<span style="color:#ae81ff">5</span>))
+</span></span><span style="display:flex;"><span>ax <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>barplot(x<span style="color:#f92672">=</span>bottom_10<span style="color:#f92672">.</span>values, y<span style="color:#f92672">=</span>bottom_10<span style="color:#f92672">.</span>index,palette<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bone&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> ax<span style="color:#f92672">.</span>containers:
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>bar_label(i) 
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><figure><img src="https://anonhan.github.io/Portfolio/images/Crime/untitled_21_0.png"/>
+</figure>
+
+<figure><img src="https://anonhan.github.io/Portfolio/images/Crime/untitled_21_1.png"/>
+</figure>
+</p>
+<h5 id="observation-3">Observation:</h5>
+<ol>
+<li>THEFT/MISD/CC holds the highest number of crimes that were being committed, which is approximately 26K, while the second graph shows the least number of crimes.</li>
+</ol>
+<h5 id="3-what-are-the-top-20-offense-sectionsarticles-that-were-voilated">3. What are the top 20 Offense sections/articles that were voilated?</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>top_offense <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#39;OFFENSE&#39;</span>)[<span style="color:#e6db74">&#39;OFFENSE&#39;</span>]<span style="color:#f92672">.</span>agg(<span style="color:#e6db74">&#39;count&#39;</span>)<span style="color:#f92672">.</span>sort_values(ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)[:<span style="color:#ae81ff">10</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">12</span>,<span style="color:#ae81ff">12</span>))
+</span></span><span style="display:flex;"><span>squarify<span style="color:#f92672">.</span>plot(sizes<span style="color:#f92672">=</span>top_offense<span style="color:#f92672">.</span>values,label<span style="color:#f92672">=</span>top_offense<span style="color:#f92672">.</span>index,
+</span></span><span style="display:flex;"><span>             color<span style="color:#f92672">=</span>sns<span style="color:#f92672">.</span>color_palette(<span style="color:#e6db74">&#39;Set2&#39;</span>),text_kwargs<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;fontsize&#39;</span>:<span style="color:#ae81ff">15</span>})
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>axis(<span style="color:#e6db74">&#39;off&#39;</span>)
+</span></span></code></pre></div><figure><img src="https://anonhan.github.io/Portfolio/images/Crime/untitled_24_1.png"/>
+</figure>
+
+<h5 id="observation-4">Observation</h5>
+<ul>
+<li>Section .588194444 was violated the highest number of times, followed by 13:56.</li>
+</ul>
+<p><strong>NOTE</strong>: While analyzing different sections/articles which are under the laws of the United States, some of the sections were not available on the internet, while some of them have documents that mention those articles clearly.</p>
+<h5 id="3-what--was-the-proportion-of-crime-cases-reported-in-each-district-complete-district">3. What  was the proportion of crime cases reported in each district (Complete District)?</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>crime_byDist <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#39;COMPLETE DISTRICT&#39;</span>)[<span style="color:#e6db74">&#39;COMPLETE DISTRICT&#39;</span>]<span style="color:#f92672">.</span>agg(<span style="color:#e6db74">&#39;count&#39;</span>)<span style="color:#f92672">.</span>sort_values(ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>per_crime_byDist <span style="color:#f92672">=</span> (crime_byDist<span style="color:#f92672">/</span>crime_byDist<span style="color:#f92672">.</span>sum())<span style="color:#f92672">*</span><span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">30</span>))
+</span></span><span style="display:flex;"><span>ax <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>barplot(y<span style="color:#f92672">=</span>per_crime_byDist<span style="color:#f92672">.</span>index, x<span style="color:#f92672">=</span>per_crime_byDist<span style="color:#f92672">.</span>values, palette<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;bone&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> ax<span style="color:#f92672">.</span>containers:
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>bar_label(i)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><figure><img src="https://anonhan.github.io/Portfolio/images/Crime/untitled_27_0.png"/>
+</figure>
+
+<h5 id="observation-5">Observation:</h5>
+<ul>
+<li>Around 4.8% of the crimes were registered in the 2C3 district of the Baton Rouge, it was the most violent district of all the 89 districts.</li>
+<li>District 1C4 seem to be the least violent city.</li>
+<li>We can also see that some of the districts are not in a proper format, such as 1.00E+01, which means it was not formatted properly. So we may need to clean it, to present in a proper format.</li>
+</ul>
+<h5 id="4-lets-analyse-it-in-depth-and-find-some-interesting-insights">4. Let&rsquo;s analyse it in depth, and find some interesting insights.</h5>
+<p>First we will try to find out quantile where the 50% of the data will be less and 50% of the data will be lower than it.</p>
+<p>Why we are doing so?</p>
+<p>Because this will help us to understand that what is a number of districts from which 50% of the crimes were being registered.</p>
+<p>Let&rsquo;s see, that what I mean.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># find the quantile</span>
+</span></span><span style="display:flex;"><span>separater <span style="color:#f92672">=</span>  per_crime_byDist<span style="color:#f92672">.</span>quantile(<span style="color:#ae81ff">.8</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># get the districts which are greather than quantile</span>
+</span></span><span style="display:flex;"><span>top_crime_dist <span style="color:#f92672">=</span> per_crime_byDist[per_crime_byDist<span style="color:#f92672">&gt;</span>separater]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># let&#39;s see if this quatile is getting the correct value </span>
+</span></span><span style="display:flex;"><span>print(top_crime_dist<span style="color:#f92672">.</span>sum()<span style="color:#f92672">/</span>per_crime_byDist<span style="color:#f92672">.</span>sum())
+</span></span></code></pre></div><pre><code>0.49313090429901435
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># let&#39;s see how many districts are there in the first half</span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;50</span><span style="color:#e6db74">% o</span><span style="color:#e6db74">f the crime cases were comming from </span><span style="color:#e6db74">{}</span><span style="color:#e6db74"> districts, while the remaining 50</span><span style="color:#e6db74">% f</span><span style="color:#e6db74">rom the </span><span style="color:#e6db74">{}</span><span style="color:#e6db74"> districts.&#39;</span>\
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">.</span>format(len(top_crime_dist),len(per_crime_byDist)<span style="color:#f92672">-</span>len(top_crime_dist)))
+</span></span></code></pre></div><pre><code>50% of the crime cases were comming from 18 districts, while the remaining 50% from the 69 districts.
+</code></pre>
+<h5 id="observtion">Observtion:</h5>
+<ul>
+<li>It is a very interesting finding, which shows us that only <strong>18</strong> cities contributes to <strong>50%</strong> of the crime in the city of Baton Rouge.</li>
+<li>It may help the Police Department and District Authorities to deploy more police units in these districts.</li>
+<li>And that&rsquo;s not only thing that would help in the reduction of the crimes in these districts, they may need to find the root cause of higher crime rate by interacting with the people of the districts, to understand that what is influencing the criminals to go violent.</li>
+<li>It could be unemployment, lack of education, and some other factors.</li>
+</ul>
+<h5 id="5-average-crime-rate-in-both-the-halves-of-the-districts">5. Average crime rate in both the halves of the districts.</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;Average crime rate in top 18 districts is </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">%.&#39;</span><span style="color:#f92672">.</span>format(round(np<span style="color:#f92672">.</span>average(top_crime_dist<span style="color:#f92672">.</span>values),<span style="color:#ae81ff">3</span>)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># getting the remaining dists</span>
+</span></span><span style="display:flex;"><span>remaing_dists <span style="color:#f92672">=</span> [i <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> per_crime_byDist<span style="color:#f92672">.</span>index <span style="color:#66d9ef">if</span> i <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> top_crime_dist<span style="color:#f92672">.</span>index]
+</span></span><span style="display:flex;"><span>remaing_dists <span style="color:#f92672">=</span> per_crime_byDist<span style="color:#f92672">.</span>loc[remaing_dists]
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;Average crime rate in remaining 69 districts is </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">%.&#39;</span><span style="color:#f92672">.</span>format(round(np<span style="color:#f92672">.</span>average(remaing_dists<span style="color:#f92672">.</span>values),<span style="color:#ae81ff">3</span>)))
+</span></span></code></pre></div><pre><code>Average crime rate in top 18 districts is 2.74%.
+Average crime rate in remaining 69 districts is 0.735%.
+</code></pre>
+<h5 id="observation-6">Observation:</h5>
+<ul>
+<li>The average crime rate in the top 18 districts is extremly high when compared to the remainig 69 districts.</li>
+</ul>
+<h5 id="6-lets-dig-deeper-and-foucs-on-these-18-districts">6. Let&rsquo;s dig deeper and foucs on these 18 districts</h5>
+<p>Now, we will try to find out top street names from where which top cases are coming from.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># grab all the top 18 districts</span>
+</span></span><span style="display:flex;"><span>dist_19 <span style="color:#f92672">=</span> df[(df[<span style="color:#e6db74">&#39;COMPLETE DISTRICT&#39;</span>]<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;2C3&#39;</span>)<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>            (df[<span style="color:#e6db74">&#39;COMPLETE DISTRICT&#39;</span>]<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;1C1&#39;</span>)<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>            (df[<span style="color:#e6db74">&#39;COMPLETE DISTRICT&#39;</span>]<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;1D1&#39;</span>)<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>            (df[<span style="color:#e6db74">&#39;COMPLETE DISTRICT&#39;</span>]<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;1F1&#39;</span>)<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>            (df[<span style="color:#e6db74">&#39;COMPLETE DISTRICT&#39;</span>]<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;2D1&#39;</span>)<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>            (df[<span style="color:#e6db74">&#39;COMPLETE DISTRICT&#39;</span>]<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;4F2&#39;</span>)<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>            (df[<span style="color:#e6db74">&#39;COMPLETE DISTRICT&#39;</span>]<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;1B2&#39;</span>)<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>            (df[<span style="color:#e6db74">&#39;COMPLETE DISTRICT&#39;</span>]<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;4F1&#39;</span>)<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>            (df[<span style="color:#e6db74">&#39;COMPLETE DISTRICT&#39;</span>]<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;1B1&#39;</span>)<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>            (df[<span style="color:#e6db74">&#39;COMPLETE DISTRICT&#39;</span>]<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;3D2&#39;</span>)<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>            (df[<span style="color:#e6db74">&#39;COMPLETE DISTRICT&#39;</span>]<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;2A2&#39;</span>)<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>            (df[<span style="color:#e6db74">&#39;COMPLETE DISTRICT&#39;</span>]<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;4C1&#39;</span>)<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>            (df[<span style="color:#e6db74">&#39;COMPLETE DISTRICT&#39;</span>]<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;2A1&#39;</span>)<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>            (df[<span style="color:#e6db74">&#39;COMPLETE DISTRICT&#39;</span>]<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;1C2&#39;</span>)<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>            (df[<span style="color:#e6db74">&#39;COMPLETE DISTRICT&#39;</span>]<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;2C1&#39;</span>)<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>            (df[<span style="color:#e6db74">&#39;COMPLETE DISTRICT&#39;</span>]<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;2B2&#39;</span>)<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>            (df[<span style="color:#e6db74">&#39;COMPLETE DISTRICT&#39;</span>]<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;4D1&#39;</span>)<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>            (df[<span style="color:#e6db74">&#39;COMPLETE DISTRICT&#39;</span>]<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;1A1&#39;</span>)]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>crime_byStreet <span style="color:#f92672">=</span> dist_19<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#39;STREET NAME&#39;</span>)[<span style="color:#e6db74">&#39;STREET NAME&#39;</span>]<span style="color:#f92672">.</span>agg(<span style="color:#e6db74">&#39;count&#39;</span>)<span style="color:#f92672">.</span>sort_values(ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>per_crime_byStreet <span style="color:#f92672">=</span> (crime_byStreet<span style="color:#f92672">/</span>crime_byStreet<span style="color:#f92672">.</span>sum())<span style="color:#f92672">*</span><span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span>per_crime_byStreet <span style="color:#f92672">=</span> per_crime_byStreet[:<span style="color:#ae81ff">10</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># barplot</span>
+</span></span><span style="display:flex;"><span>ax <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>barplot(x<span style="color:#f92672">=</span>per_crime_byStreet<span style="color:#f92672">.</span>values,y<span style="color:#f92672">=</span>per_crime_byStreet<span style="color:#f92672">.</span>index,palette<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;bone&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> ax<span style="color:#f92672">.</span>containers:
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>bar_label(i)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;Total Number of Streets by Name is&#39;</span>,dist_19[<span style="color:#e6db74">&#39;STREET NAME&#39;</span>]<span style="color:#f92672">.</span>nunique())
+</span></span></code></pre></div><figure><img src="https://anonhan.github.io/Portfolio/images/Crime/untitled_38_0.png"/>
+</figure>
+
+<pre><code>Total Number of Streets by Name is 2499
+</code></pre>
+<h5 id="observation-7">Observation:</h5>
+<ul>
+<li>Plank and Florida street seem to be the most affected streets where most number of criminals activities took place.</li>
+</ul>
+<h5 id="7-what-is-total-proportion-of-crime-in-top-10-streets">7. What is total proportion of crime in top 10 streets?</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;Percentage of Crimes cases in top 10 streets is </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">% (cosidering the 18 districts only).&#39;</span><span style="color:#f92672">.</span>format(round(per_crime_byStreet<span style="color:#f92672">.</span>sum(),<span style="color:#ae81ff">3</span>)))
+</span></span></code></pre></div><pre><code>Percentage of Crimes cases in top 10 streets is 23.891% (cosidering the 18 districts only).
+</code></pre>
+<h5 id="8-compare-top-10-streets-crimes-cases-to-the-total-number-of-crimes-in-the-dataset-and-find-out-the-percentage">8. Compare top 10 streets crimes cases to the total number of crimes in the dataset and find out the percentage.</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Logic to implement this question is:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># sum of top 10 street Crimes/total number of crimes in the dataset</span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;Proportion of Crimes in top 10 streets by the total number of crimes in the whole city is </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">%.&#39;</span><span style="color:#f92672">.</span>format(round((crime_byStreet[:<span style="color:#ae81ff">10</span>]<span style="color:#f92672">.</span>sum()<span style="color:#f92672">/</span>len(df))<span style="color:#f92672">*</span><span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">2</span>)))
+</span></span></code></pre></div><pre><code>Proportion of Crimes in top 10 streets by the total number of crimes in the whole city is 11.06%.
+</code></pre>
+<h5 id="observation-8">Observation:</h5>
+<ul>
+<li>Almost 11% of the crimes cases that were registered had these 10 streets in common, and this is quite a large proportion.</li>
+</ul>
+<h4 id="lets-return-back-to-our-complete-set--of-data-now">Let&rsquo;s return back to our complete set  of data now.</h4>
+<p>As we know that there is hierarcy present in the dataset, under different locaion columns. However, unfortunately we cannot visualize it using python. So, I will try to represent in the from of graphs and figures.</p>
+<h5 id="9-at-what-time-of-the-day-most-of-the-crimes-were-commitedreported">9. At what time of the day most of the crimes were commited/reported?</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># In order to group the data by time on hourly basis, we are required to take only the hour of the day.</span>
+</span></span><span style="display:flex;"><span>df[<span style="color:#e6db74">&#39;Hour&#39;</span>] <span style="color:#f92672">=</span> [i[:<span style="color:#ae81ff">2</span>] <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> df[<span style="color:#e6db74">&#39;Time&#39;</span>]] 
+</span></span><span style="display:flex;"><span>df[<span style="color:#e6db74">&#39;Hour&#39;</span>]<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">5</span>)
+</span></span></code></pre></div><pre><code>0    16
+1    22
+2    05
+3    23
+4    16
+Name: Hour, dtype: object
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># grouping data by hour of the day</span>
+</span></span><span style="display:flex;"><span>hour_g <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#39;Hour&#39;</span>)[<span style="color:#e6db74">&#39;Hour&#39;</span>]<span style="color:#f92672">.</span>agg(<span style="color:#e6db74">&#39;count&#39;</span>)<span style="color:#f92672">.</span>sort_index(ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>hour_g<span style="color:#f92672">.</span>drop([<span style="color:#e6db74">&#39;0:&#39;</span>,<span style="color:#e6db74">&#39;1]&#39;</span>,<span style="color:#e6db74">&#39;7.&#39;</span>,<span style="color:#e6db74">&#39;8.&#39;</span>],inplace<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># plotting graph</span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">16</span>,<span style="color:#ae81ff">4</span>))
+</span></span><span style="display:flex;"><span>fig <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>lineplot(x<span style="color:#f92672">=</span>hour_g<span style="color:#f92672">.</span>index,y<span style="color:#f92672">=</span>hour_g<span style="color:#f92672">.</span>values)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><figure><img src="https://anonhan.github.io/Portfolio/images/Crime/line1.png"/>
+</figure>
+
+<h5 id="observation-9">Observation</h5>
+<p>Crime rates drop sharply after midnight, i.e. after 1 AM. Nonetheless, they start increasing after 5 AM.</p>
+<ul>
+<li>The time frame between 3 PM and 12 AM seem to be the most critical, where more than 25K crimes were committed at each hour (do not generalize it as 25K crimes per day).</li>
+<li>The highest number of crimes were happened at 12AM, which constitutes more than 6% of the total crimes in the 10 years.</li>
+</ul>
+<h5 id="10-what-is-total-proportion-of-crimes-committed-between-3pm-and-12am-to-the-total-number-of-crimes-in-the-dataset">10. What is total proportion of crimes committed between 3PM and 12AM to the total number of crimes in the dataset?</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>from3to12 <span style="color:#f92672">=</span> hour_g<span style="color:#f92672">.</span>loc[[<span style="color:#e6db74">&#39;15&#39;</span>,<span style="color:#e6db74">&#39;16&#39;</span>,<span style="color:#e6db74">&#39;17&#39;</span>,<span style="color:#e6db74">&#39;18&#39;</span>,<span style="color:#e6db74">&#39;19&#39;</span>,<span style="color:#e6db74">&#39;20&#39;</span>,<span style="color:#e6db74">&#39;21&#39;</span>,<span style="color:#e6db74">&#39;22&#39;</span>,<span style="color:#e6db74">&#39;23&#39;</span>,<span style="color:#e6db74">&#39;00&#39;</span>]]<span style="color:#f92672">.</span>sum()
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;Percentage of Crimes between 3PM to 12AM is </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">%&#39;</span><span style="color:#f92672">.</span>format(round((from3to12<span style="color:#f92672">/</span>len(df))<span style="color:#f92672">*</span><span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">3</span>)))
+</span></span></code></pre></div><pre><code>Percentage of Crimes between 3PM to 12AM is 54.911%
+</code></pre>
+<h5 id="observation-10">Observation</h5>
+<ul>
+<li>More than 54% of the crimes were committed between 3PM to 12AM, which is quite a large percentage. And shows a pattern that might help the City Authorities in reduction of the crime rate.</li>
+</ul>
+<h5 id="11-get-the-total-number-of-deaths-on-each-day-week-month-of-the-year">11. Get the total number of deaths on each day, week, month of the year.</h5>
+<h5 id="11a-number-of-crimes-each-day">11.A. Number of crimes each day.</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># First let&#39;s check the data type of the date column</span>
+</span></span><span style="display:flex;"><span>df[<span style="color:#e6db74">&#39;date&#39;</span>]<span style="color:#f92672">.</span>dtype
+</span></span></code></pre></div><pre><code>dtype('O')
+</code></pre>
+<p>Above it can be seen that &lsquo;date&rsquo; is of Object type, so we will convert it to datetime type.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df[<span style="color:#e6db74">&#39;date&#39;</span>] <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>to_datetime(df[<span style="color:#e6db74">&#39;date&#39;</span>])
+</span></span></code></pre></div><p>As we know that we have around 10 year of data, and in total we have data of 3657 days. Now, I have an idea to group the data by day and add an another column which is the number of crimes on each day. After that we can use a time series to predict the future crime rate.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># First let&#39;s visualize the data by grouping it by day and using a line plot </span>
+</span></span><span style="display:flex;"><span>day_group <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#39;date&#39;</span>)[<span style="color:#e6db74">&#39;date&#39;</span>]<span style="color:#f92672">.</span>agg(<span style="color:#e6db74">&#39;count&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">16</span>,<span style="color:#ae81ff">4</span>))
+</span></span><span style="display:flex;"><span>fig <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>lineplot(x<span style="color:#f92672">=</span>day_group<span style="color:#f92672">.</span>index,y<span style="color:#f92672">=</span>day_group<span style="color:#f92672">.</span>values)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><figure><img src="https://anonhan.github.io/Portfolio/images/Crime/line2.png"/>
+</figure>
+
+<h5 id="observation-11">Observation</h5>
+<ul>
+<li>As we could see, it is hard to understand yet, so we will try to find the weekly and monthly pattern.</li>
+<li>Another thing to notice here is that, the crime rate is felling suddenly at the end of 2020, the reason could be that the dataset may not have the enough number of data points for Jan 2021. So let&rsquo;s see this, and if that is the case, we will chop off those values from the year 2021.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># How many  datapoints are there in the dataset after Dec-31-2020?</span>
+</span></span><span style="display:flex;"><span>len(df[df[<span style="color:#e6db74">&#39;date&#39;</span>]<span style="color:#f92672">&gt;</span><span style="color:#e6db74">&#39;2020-12-31&#39;</span>])
+</span></span></code></pre></div><pre><code>60
+</code></pre>
+<p>Our assumption was correct, there are only 60 data points after the December 2020, making the line to fell off quickly. So we&rsquo;ll remove it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># remove the data that is after Dec-31-2020.</span>
+</span></span><span style="display:flex;"><span>df <span style="color:#f92672">=</span> df[df[<span style="color:#e6db74">&#39;date&#39;</span>]<span style="color:#f92672">&lt;=</span><span style="color:#e6db74">&#39;2020-12-31&#39;</span>]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># let&#39;s plot the graph again</span>
+</span></span><span style="display:flex;"><span>day_group <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#39;date&#39;</span>)[<span style="color:#e6db74">&#39;date&#39;</span>]<span style="color:#f92672">.</span>agg(<span style="color:#e6db74">&#39;count&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">16</span>,<span style="color:#ae81ff">4</span>))
+</span></span><span style="display:flex;"><span>fig <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>lineplot(x<span style="color:#f92672">=</span>day_group<span style="color:#f92672">.</span>index,y<span style="color:#f92672">=</span>day_group<span style="color:#f92672">.</span>values)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><figure><img src="https://anonhan.github.io/Portfolio/images/Crime/line3.png"/>
+</figure>
+
+It looks better now&hellip;</p>
+<h5 id="11b-number-of-crimes-each-week">11.B. Number of crimes each week</h5>
+<p><em>First, we group the data by week, for this we will use numpy array to group the data. Ideally we should get around 520 weeks</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># group by week </span>
+</span></span><span style="display:flex;"><span>week_group <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>groupby(np<span style="color:#f92672">.</span>array(df[<span style="color:#e6db74">&#39;date&#39;</span>],dtype<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;datetime64[W]&#39;</span>))[<span style="color:#e6db74">&#39;date&#39;</span>]<span style="color:#f92672">.</span>agg(<span style="color:#e6db74">&#39;count&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ploting graph</span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">16</span>,<span style="color:#ae81ff">4</span>))
+</span></span><span style="display:flex;"><span>fig <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>lineplot(x<span style="color:#f92672">=</span>week_group<span style="color:#f92672">.</span>index,y<span style="color:#f92672">=</span>week_group<span style="color:#f92672">.</span>values)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><figure><img src="https://anonhan.github.io/Portfolio/images/Crime/line5.png"/>
+</figure>
+
+<h5 id="observation-12">Observation</h5>
+<ul>
+<li>Overall, the number of crimes have been decreased greatly by approximately 55% in the during of 10 years.</li>
+<li>We can also observe a slight pattern in where the number of crimes committed spikes in the beginning of the year and after staying on the top for few months, it starts plunging down. Let&rsquo;s make it clear by grouping it monthly.</li>
+</ul>
+<h5 id="11c-number-of-crimes-each-month">11.C. Number of crimes each month</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># group by month</span>
+</span></span><span style="display:flex;"><span>month_group <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>groupby(np<span style="color:#f92672">.</span>array(df[<span style="color:#e6db74">&#39;date&#39;</span>],dtype<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;datetime64[M]&#39;</span>))[<span style="color:#e6db74">&#39;date&#39;</span>]<span style="color:#f92672">.</span>agg(<span style="color:#e6db74">&#39;count&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># plot the graph</span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">16</span>,<span style="color:#ae81ff">4</span>))
+</span></span><span style="display:flex;"><span>fig <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>lineplot(x<span style="color:#f92672">=</span>week_group<span style="color:#f92672">.</span>index,y<span style="color:#f92672">=</span>week_group<span style="color:#f92672">.</span>values)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><figure><img src="https://anonhan.github.io/Portfolio/images/Crime/line6.png"/>
+</figure>
+
+<h5 id="observation-13">Observation</h5>
+<ul>
+<li>There is certainly a pattern, where the crime rate is increasing during the start of the year and decreasing in the end of the year.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># group by year</span>
+</span></span><span style="display:flex;"><span>year_group <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>groupby(np<span style="color:#f92672">.</span>array(df[<span style="color:#e6db74">&#39;date&#39;</span>],dtype<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;datetime64[Y]&#39;</span>))[<span style="color:#e6db74">&#39;date&#39;</span>]<span style="color:#f92672">.</span>agg(<span style="color:#e6db74">&#39;count&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># plot the graph</span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">16</span>,<span style="color:#ae81ff">4</span>))
+</span></span><span style="display:flex;"><span>fig <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>lineplot(x<span style="color:#f92672">=</span>year_group<span style="color:#f92672">.</span>index,y<span style="color:#f92672">=</span>year_group<span style="color:#f92672">.</span>values)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><h5 id="obervation">Obervation</h5>
+<ul>
+<li>No doubt that the number of crime getting committed had dcreased from around 62K in 2011 to around 38K in the year 2020.</li>
+</ul>
+<h5 id="aggregating-data-by-date-and-making-a-new-dataframe">Aggregating data by date and making a new Dataframe</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df_new <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>pivot_table(index<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;date&#39;</span>],values<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;COMMITTED&#39;</span>],aggfunc<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;count&#39;</span>)
+</span></span></code></pre></div><h5 id="12-distribution-of-the-data">12. Distribution of the data</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">5</span>))
+</span></span><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>kdeplot(data<span style="color:#f92672">=</span>df_new)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><figure><img src="https://anonhan.github.io/Portfolio/images/Crime/dist.png"/>
+</figure>
+
+<p>The data is distributed normally, while there are some outliers present at the right tail of the distribution.</p>
+<h5 id="13-analysing-the-trend-seasonality-using-statsmodel">13. Analysing the Trend, seasonality using statsmodel</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> statsmodels.tsa.seasonal <span style="color:#f92672">import</span> seasonal_decompose
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># we will use the weekly data to viualize it.</span>
+</span></span><span style="display:flex;"><span>res <span style="color:#f92672">=</span> seasonal_decompose(week_group,model<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;additive&#39;</span>)
+</span></span><span style="display:flex;"><span>res<span style="color:#f92672">.</span>plot()
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><figure><img src="https://anonhan.github.io/Portfolio/images/Crime/untitled_80_0.png"/>
+</figure>
+
+<h5 id="observation-14">Observation</h5>
+<ul>
+<li>The trend is downward, as we saw it earlier also, which means the crime were actually decreased from 2011 to 2020.</li>
+<li>The statistical model was also justifying our analysis of seasonal trend, where the crime rate is decreasing at the end of the year and increasing at the start of the month.</li>
+</ul>
+<h3 id="predicting-crime-rate-using-xgboost">Predicting Crime rate using XGBoost</h3>
+<p>We will use XGBoost regressor to predict the number of crimes for the future. And here I am treating it as a regression problem, where the feature will be the total weekly orders of previous month and total monthly orders of previous month, using which we will predict the next week&rsquo;s total number of crimes.</p>
+<p>First, we combine data the by week using the groupby(), the reason we are doing this is that we want to predict the number of crime in the next month, so our training set should also contain the weekly data.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># group by week</span>
+</span></span><span style="display:flex;"><span>week_group <span style="color:#f92672">=</span> df_new<span style="color:#f92672">.</span>groupby(np<span style="color:#f92672">.</span>array(df_new<span style="color:#f92672">.</span>index,dtype<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;datetime64[W]&#39;</span>))<span style="color:#f92672">.</span>agg(<span style="color:#e6db74">&#39;sum&#39;</span>)<span style="color:#f92672">.</span>sort_index()
+</span></span><span style="display:flex;"><span>week_group<span style="color:#f92672">.</span>head()
+</span></span></code></pre></div><h4 id="features">Features</h4>
+<ul>
+<li><strong>prev_week_crimes</strong>: The sum of the total number of crimes committed in the last week.</li>
+<li><strong>prev_month_crimes</strong>: The sum of the total number of crimes committed in the last month.</li>
+<li><strong>target</strong>: The sum of the total number of crimes committed in the next week.</li>
+</ul>
+<h5 id="in-laymans-term">In layman&rsquo;s term:</h5>
+<p>We are asking our model that I have the data of crimes committed in the last week and the crimes committed in the last month, for this data please predict that what would be the total number of crimes in the next week.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a <span style="color:#f92672">=</span> week_group<span style="color:#f92672">.</span>copy()
+</span></span><span style="display:flex;"><span>a[<span style="color:#e6db74">&#39;target&#39;</span>] <span style="color:#f92672">=</span> a<span style="color:#f92672">.</span>shift(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)                                  <span style="color:#75715e"># our target is to predic the total number of crimes in the next week</span>
+</span></span><span style="display:flex;"><span>a[<span style="color:#e6db74">&#39;prev_week_crimes&#39;</span>] <span style="color:#f92672">=</span> a[<span style="color:#e6db74">&#39;COMMITTED&#39;</span>]<span style="color:#f92672">.</span>rolling(<span style="color:#ae81ff">1</span>)<span style="color:#f92672">.</span>sum()    <span style="color:#75715e"># total numbber of crimes in last week</span>
+</span></span><span style="display:flex;"><span>a[<span style="color:#e6db74">&#39;prev_month_crimes&#39;</span>] <span style="color:#f92672">=</span> a[<span style="color:#e6db74">&#39;COMMITTED&#39;</span>]<span style="color:#f92672">.</span>rolling(<span style="color:#ae81ff">4</span>)<span style="color:#f92672">.</span>sum()   <span style="color:#75715e"># total number of crimes in last month</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># dropping null values</span>
+</span></span><span style="display:flex;"><span>a<span style="color:#f92672">.</span>dropna(inplace<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>a<span style="color:#f92672">.</span>isna()<span style="color:#f92672">.</span>sum()
+</span></span></code></pre></div><pre><code>COMMITTED            0
+target               0
+prev_week_crimes     0
+prev_month_crimes    0
+dtype: int64
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># splitting into train test set</span>
+</span></span><span style="display:flex;"><span>features <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;prev_week_crimes&#39;</span>,<span style="color:#e6db74">&#39;prev_month_crimes&#39;</span>]
+</span></span><span style="display:flex;"><span>label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;target&#39;</span>
+</span></span><span style="display:flex;"><span>train <span style="color:#f92672">=</span> a[a<span style="color:#f92672">.</span>index<span style="color:#f92672">&lt;</span><span style="color:#e6db74">&#39;2020-06-17&#39;</span>]
+</span></span><span style="display:flex;"><span>test <span style="color:#f92672">=</span> a[a<span style="color:#f92672">.</span>index<span style="color:#f92672">&gt;=</span><span style="color:#e6db74">&#39;2020-06-17&#39;</span>]
+</span></span><span style="display:flex;"><span>x_tr, y_tr, x_ts, y_ts <span style="color:#f92672">=</span> train[features],train[label],test[features],test[label]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># training the model</span>
+</span></span><span style="display:flex;"><span>model <span style="color:#f92672">=</span> XGBRegressor(learning_rate<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,n_jobs<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>fit(x_tr,y_tr,
+</span></span><span style="display:flex;"><span>         eval_set<span style="color:#f92672">=</span>[(x_tr,y_tr),(x_ts,y_ts)],
+</span></span><span style="display:flex;"><span>         eval_metric<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;mae&#39;</span>)
+</span></span></code></pre></div><pre><code>[0]	validation_0-mae:75.37097	validation_1-mae:91.05511
+[1]	validation_0-mae:53.58047	validation_1-mae:80.03402
+[2]	validation_0-mae:50.05007	validation_1-mae:79.40639
+[3]	validation_0-mae:47.10582	validation_1-mae:79.32606
+[4]	validation_0-mae:44.62251	validation_1-mae:81.32960
+[5]	validation_0-mae:38.70724	validation_1-mae:80.50050
+[6]	validation_0-mae:35.58894	validation_1-mae:80.06934
+[7]	validation_0-mae:30.82383	validation_1-mae:80.13407
+[8]	validation_0-mae:28.81021	validation_1-mae:83.37239
+[9]	validation_0-mae:25.51319	validation_1-mae:83.25565
+[10]	validation_0-mae:22.80687	validation_1-mae:84.57256
+[11]	validation_0-mae:21.41127	validation_1-mae:86.59963
+[12]	validation_0-mae:19.25196	validation_1-mae:85.26116
+[13]	validation_0-mae:18.14237	validation_1-mae:85.57725
+[14]	validation_0-mae:16.91468	validation_1-mae:85.57920
+[15]	validation_0-mae:15.43452	validation_1-mae:86.23103
+[16]	validation_0-mae:13.89022	validation_1-mae:86.34436
+[17]	validation_0-mae:13.05472	validation_1-mae:86.45736
+[18]	validation_0-mae:12.26806	validation_1-mae:86.44796
+[19]	validation_0-mae:11.72022	validation_1-mae:88.49159
+[20]	validation_0-mae:11.22507	validation_1-mae:88.48840
+[21]	validation_0-mae:10.96309	validation_1-mae:88.49840
+[22]	validation_0-mae:10.17063	validation_1-mae:88.21624
+[23]	validation_0-mae:9.48666	validation_1-mae:88.17698
+[24]	validation_0-mae:8.76747	validation_1-mae:88.17497
+[25]	validation_0-mae:8.29581	validation_1-mae:88.10970
+[26]	validation_0-mae:7.58127	validation_1-mae:88.12104
+[27]	validation_0-mae:6.95461	validation_1-mae:88.14097
+[28]	validation_0-mae:6.45838	validation_1-mae:88.08651
+[29]	validation_0-mae:5.99582	validation_1-mae:88.18462
+
+C:\Users\Sahil\anaconda3\lib\site-packages\xgboost\data.py:208: FutureWarning:
+
+pandas.Int64Index is deprecated and will be removed from pandas in a future version. Use pandas.Index with the appropriate dtype instead.
+
+
+
+
+[30]	validation_0-mae:5.75822	validation_1-mae:88.17865
+[31]	validation_0-mae:5.34255	validation_1-mae:88.12007
+[32]	validation_0-mae:5.10146	validation_1-mae:88.11165
+[33]	validation_0-mae:4.71188	validation_1-mae:88.14526
+[34]	validation_0-mae:4.34532	validation_1-mae:88.13932
+[35]	validation_0-mae:4.11395	validation_1-mae:88.12232
+[36]	validation_0-mae:3.94624	validation_1-mae:88.12302
+[37]	validation_0-mae:3.58894	validation_1-mae:88.23475
+[38]	validation_0-mae:3.35816	validation_1-mae:88.83941
+[39]	validation_0-mae:3.18376	validation_1-mae:88.84068
+[40]	validation_0-mae:2.92502	validation_1-mae:88.85929
+[41]	validation_0-mae:2.79996	validation_1-mae:89.42962
+[42]	validation_0-mae:2.68092	validation_1-mae:89.24129
+[43]	validation_0-mae:2.55684	validation_1-mae:89.24309
+[44]	validation_0-mae:2.22073	validation_1-mae:89.23994
+[45]	validation_0-mae:2.08388	validation_1-mae:89.31083
+[46]	validation_0-mae:1.99588	validation_1-mae:89.30520
+[47]	validation_0-mae:1.87903	validation_1-mae:89.30912
+[48]	validation_0-mae:1.78875	validation_1-mae:89.30627
+[49]	validation_0-mae:1.62446	validation_1-mae:89.30382
+[50]	validation_0-mae:1.52844	validation_1-mae:89.18099
+[51]	validation_0-mae:1.50608	validation_1-mae:89.18392
+[52]	validation_0-mae:1.42110	validation_1-mae:89.18489
+[53]	validation_0-mae:1.28899	validation_1-mae:89.23101
+[54]	validation_0-mae:1.16892	validation_1-mae:89.16341
+[55]	validation_0-mae:1.11957	validation_1-mae:89.33773
+[56]	validation_0-mae:1.04397	validation_1-mae:89.33704
+[57]	validation_0-mae:1.01655	validation_1-mae:89.35033
+[58]	validation_0-mae:0.97999	validation_1-mae:89.35187
+[59]	validation_0-mae:0.92446	validation_1-mae:89.40121
+[60]	validation_0-mae:0.85368	validation_1-mae:89.40220
+[61]	validation_0-mae:0.79047	validation_1-mae:89.45270
+[62]	validation_0-mae:0.74321	validation_1-mae:89.45060
+[63]	validation_0-mae:0.70603	validation_1-mae:89.35731
+[64]	validation_0-mae:0.64721	validation_1-mae:89.35878
+[65]	validation_0-mae:0.61236	validation_1-mae:89.36945
+[66]	validation_0-mae:0.57853	validation_1-mae:89.37351
+[67]	validation_0-mae:0.54877	validation_1-mae:89.37283
+[68]	validation_0-mae:0.51569	validation_1-mae:89.37130
+[69]	validation_0-mae:0.48056	validation_1-mae:89.32938
+[70]	validation_0-mae:0.44913	validation_1-mae:89.32975
+[71]	validation_0-mae:0.42749	validation_1-mae:89.32777
+[72]	validation_0-mae:0.41025	validation_1-mae:89.36350
+[73]	validation_0-mae:0.40412	validation_1-mae:89.38454
+[74]	validation_0-mae:0.39031	validation_1-mae:89.38445
+[75]	validation_0-mae:0.36572	validation_1-mae:89.38453
+[76]	validation_0-mae:0.34777	validation_1-mae:89.38426
+[77]	validation_0-mae:0.32241	validation_1-mae:89.38306
+[78]	validation_0-mae:0.30678	validation_1-mae:89.38380
+[79]	validation_0-mae:0.29462	validation_1-mae:89.38390
+[80]	validation_0-mae:0.28762	validation_1-mae:89.38436
+[81]	validation_0-mae:0.27757	validation_1-mae:89.38444
+[82]	validation_0-mae:0.25902	validation_1-mae:89.38442
+[83]	validation_0-mae:0.24477	validation_1-mae:89.38478
+[84]	validation_0-mae:0.23103	validation_1-mae:89.38456
+[85]	validation_0-mae:0.20534	validation_1-mae:89.38612
+[86]	validation_0-mae:0.19832	validation_1-mae:89.38133
+[87]	validation_0-mae:0.18318	validation_1-mae:89.37969
+[88]	validation_0-mae:0.17414	validation_1-mae:89.37938
+[89]	validation_0-mae:0.16299	validation_1-mae:89.38020
+[90]	validation_0-mae:0.15467	validation_1-mae:89.38603
+[91]	validation_0-mae:0.14485	validation_1-mae:89.38545
+[92]	validation_0-mae:0.14321	validation_1-mae:89.38554
+[93]	validation_0-mae:0.12843	validation_1-mae:89.38564
+[94]	validation_0-mae:0.12320	validation_1-mae:89.39413
+[95]	validation_0-mae:0.12120	validation_1-mae:89.39733
+[96]	validation_0-mae:0.11479	validation_1-mae:89.39728
+[97]	validation_0-mae:0.10533	validation_1-mae:89.38685
+[98]	validation_0-mae:0.09760	validation_1-mae:89.38716
+[99]	validation_0-mae:0.08966	validation_1-mae:89.38728
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># making predictions</span>
+</span></span><span style="display:flex;"><span>pred <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>predict(x_ts)
+</span></span><span style="display:flex;"><span>test[<span style="color:#e6db74">&#39;pred&#39;</span>] <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>round(pred)
+</span></span></code></pre></div><p>Let&rsquo;s visualize the actual vs predicted values</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>lineplot(data<span style="color:#f92672">=</span>a<span style="color:#f92672">.</span>tail(<span style="color:#ae81ff">50</span>),x<span style="color:#f92672">=</span>a<span style="color:#f92672">.</span>tail(<span style="color:#ae81ff">50</span>)<span style="color:#f92672">.</span>index,y<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;target&#39;</span>)
+</span></span><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>lineplot(data<span style="color:#f92672">=</span>test,x<span style="color:#f92672">=</span>test<span style="color:#f92672">.</span>index,y<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;pred&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><figure><img src="https://anonhan.github.io/Portfolio/images/Crime/untitled_92_0.png"/>
+</figure>
+
+<h5 id="observation-15">Observation</h5>
+<ul>
+<li>XGBoost is clearly doing a great job, where it is closely predicting the number of cases. However, there is still a room for improvement in this model, where we can optimize the hyperparameters using GridsearchCV(), and further improve the performance of the model.</li>
+</ul>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="#E8FDF5 bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://anonhan.github.io/Portfolio/" >
+    &copy;  Sahil Sharma 2022 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+    <a href="https://github.com/anonhan" target="_blank" class="github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="GitHub link" rel="noopener" aria-label="follow on GitHub——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

@@ -6,7 +6,17 @@
     <description>Recent content in   on Sahil Sharma</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 05 Aug 2022 10:58:08 -0400</lastBuildDate><atom:link href="https://anonhan.github.io/Portfolio/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 18 Aug 2022 10:58:08 -0400</lastBuildDate><atom:link href="https://anonhan.github.io/Portfolio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Baton Rouge City Crime</title>
+      <link>https://anonhan.github.io/Portfolio/post/project-6/</link>
+      <pubDate>Thu, 18 Aug 2022 10:58:08 -0400</pubDate>
+      
+      <guid>https://anonhan.github.io/Portfolio/post/project-6/</guid>
+      <description>Problem Statement Crime analysis is a law enforcement duty that involves a systematic investigation of patterns and trends in crime and disorder. Pattern information can help law enforcement organizations deploy resources more effectively and aid detectives in locating and apprehending criminals. Crime analysis is also important in developing answers to crime problems and developing crime prevention methods.
+The Dataset This dataset contains crimes reported in Baton Rouge city and investigated by the Baton Rouge Police Department.</description>
+    </item>
+    
     <item>
       <title>Pizza Store Analysis</title>
       <link>https://anonhan.github.io/Portfolio/post/project-4/</link>
@@ -18,7 +28,7 @@ Danny was sold on the idea, but he knew that pizza alone was not going to help h
     </item>
     
     <item>
-      <title>Project-1: Covid-19 Analysis</title>
+      <title>Covid-19 Power BI Dashboard</title>
       <link>https://anonhan.github.io/Portfolio/post/project-1/</link>
       <pubDate>Tue, 26 Jul 2022 10:58:08 -0400</pubDate>
       
@@ -27,17 +37,17 @@ Danny was sold on the idea, but he knew that pizza alone was not going to help h
     </item>
     
     <item>
-      <title>Project-2: Rotten Tomatoes Web Scrapper</title>
-      <link>https://anonhan.github.io/Portfolio/post/project-2/</link>
-      <pubDate>Thu, 21 Jul 2022 10:58:08 -0400</pubDate>
+      <title>Restaurant Analysis</title>
+      <link>https://anonhan.github.io/Portfolio/post/project-5/</link>
+      <pubDate>Wed, 20 Jul 2022 10:58:08 -0400</pubDate>
       
-      <guid>https://anonhan.github.io/Portfolio/post/project-2/</guid>
-      <description>Introduction: We all data enthusiasts know the one of the famous saying that Data is the new Oil. But there comes a big question in my mind every time I come across with it that:
-How would you get this oil? How would you mine it? How much amount do we need to pay? Is there any special machinary used to extract this data? Objective: With all these questions in my mind, I came up with an idea to build a web scrapper to scrape the reviews.</description>
+      <guid>https://anonhan.github.io/Portfolio/post/project-5/</guid>
+      <description>Introduction Danny seriously loves Japanese food so in the beginning of 2021, he decides to embark upon a risky venture and opens up a cute little restaurant that sells his 3 favorite foods: sushi, curry and ramen.
+Danny’s Diner is in need of your assistance to help the restaurant stay afloat - the restaurant has captured some very basic data from their few months of operation, but have no idea how to use their data to help them run the business.</description>
     </item>
     
     <item>
-      <title>Project-3: American Bank Analysis</title>
+      <title>American Bank Analysis</title>
       <link>https://anonhan.github.io/Portfolio/post/project-3/</link>
       <pubDate>Sun, 10 Jul 2022 10:58:08 -0400</pubDate>
       
@@ -45,6 +55,16 @@ How would you get this oil? How would you mine it? How much amount do we need to
       <description>Introduction: The banking industry heavily relies on big data analytics. Where real-time analysis of the data helps banks to identify fraudulent transactions, and big data analysis to identify customer spending behavior and loan defaulters.
 In this project I worked on a sample of the banking data, which had information about the customers of the American Bank.
 Objective: The aim of this project was to answer the question asked by the bank manager and other stakeholders, such as:</description>
+    </item>
+    
+    <item>
+      <title>Rotten Tomatoes Web Scrapper</title>
+      <link>https://anonhan.github.io/Portfolio/post/project-2/</link>
+      <pubDate>Wed, 15 Jun 2022 10:58:08 -0400</pubDate>
+      
+      <guid>https://anonhan.github.io/Portfolio/post/project-2/</guid>
+      <description>Introduction: We all data enthusiasts know the one of the famous saying that Data is the new Oil. But there comes a big question in my mind every time I come across with it that:
+How would you get this oil? How would you mine it? How much amount do we need to pay? Is there any special machinary used to extract this data? Objective: With all these questions in my mind, I came up with an idea to build a web scrapper to scrape the reviews.</description>
     </item>
     
     <item>

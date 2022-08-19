@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Restaurant Analysis | Sahil Sharma</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Analysis of the customer buying patterns">
+    <meta name="generator" content="Hugo 0.100.1" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="https://anonhan.github.io/Portfolio/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Restaurant Analysis" />
+<meta property="og:description" content="Analysis of the customer buying patterns" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://anonhan.github.io/Portfolio/post/project-5/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-07-20T10:58:08-04:00" />
+<meta property="article:modified_time" content="2022-07-20T10:58:08-04:00" /><meta property="og:site_name" content="Sahil Sharma" />
+
+<meta itemprop="name" content="Restaurant Analysis">
+<meta itemprop="description" content="Analysis of the customer buying patterns"><meta itemprop="datePublished" content="2022-07-20T10:58:08-04:00" />
+<meta itemprop="dateModified" content="2022-07-20T10:58:08-04:00" />
+<meta itemprop="wordCount" content="1321">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Restaurant Analysis"/>
+<meta name="twitter:description" content="Analysis of the customer buying patterns"/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('https://anonhan.github.io/Portfolio/images/restaurant/restaurant.jpg');">
+    <div class="bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://anonhan.github.io/Portfolio/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Sahil Sharma
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://anonhan.github.io/Portfolio/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://anonhan.github.io/Portfolio/contact/" title="Contact page">
+              Contact
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://anonhan.github.io/Portfolio/post/" title="Projects page">
+              Projects
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+<div class="ananke-socials">
+  
+    <a href="https://github.com/anonhan" target="_blank" class="github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="GitHub link" rel="noopener" aria-label="follow on GitHub——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Restaurant Analysis</h1>
+          
+            <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+              Analysis of the customer buying patterns
+            </h2>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        PROJECTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Restaurant Analysis</h1>
+      
+      <p class="tracked">
+        By <strong>Sahil</strong>
+      </p>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2022-07-20T10:58:08-04:00">July 20, 2022</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h3 id="introduction">Introduction</h3>
+<p>Danny seriously loves Japanese food so in the beginning of 2021, he decides to embark upon a risky venture and opens up a cute little restaurant that sells his 3 favorite foods: sushi, curry and ramen.</p>
+<p>Danny’s Diner is in need of your assistance to help the restaurant stay afloat - the restaurant has captured some very basic data from their few months of operation, but have no idea how to use their data to help them run the business.</p>
+<h3 id="problem-statement">Problem Statement</h3>
+<p>Danny wants to use the data to answer a few simple questions about his customers, especially about their visiting patterns, how much money they’ve spent and also which menu items are their favorite. Having this deeper connection with his customers will help him deliver a better and more personalized experience for his loyal customers.</p>
+<p>He plans on using these insights to help him decide whether he should expand the existing customer loyalty program - additionally, he needs help to generate some basic datasets so his team can easily inspect the data without needing to use SQL.</p>
+<h3 id="database-schema">Database Schema</h3>
+<p>There are 3 key datasets for this case study:</p>
+<ul>
+<li>sales</li>
+<li>menu</li>
+<li>members</li>
+</ul>
+<h5 id="entity-relationship-diagram">Entity Relationship Diagram</h5>
+<figure><img src="https://anonhan.github.io/Portfolio/images/restaurant/entity.png"/>
+</figure>
+
+<p>More about tables and relationship here: <a href="https://8weeksqlchallenge.com/case-study-1/">Danny&rsquo;s Diner</a></p>
+<h3 id="case-study-questions">Case Study Questions</h3>
+<p>For this case study I am using MySQL Engine, you may use other SQL engine as per your convenience. Nonetheless, your logic to fetch the data could be different, but the result should not <strong>vary</strong>.</p>
+<ol>
+<li>
+<p>What is the total amount each customer spent at the restaurant?</p>
+<p>Here first we need to get the number of orders per customer (either using CTE or temporary tables) from the <em>sales</em> table, then we will multiply the total number of orders per customer by the price of the product from the <em>menu</em> table.</p>
+<pre><code> -- creating a temp table to store the number of orders per customer
+ CREATE TEMPORARY TABLE temp
+ SELECT  s.customer_id,
+         s.product_id,
+         SUM(CASE WHEN s.product_id IS NOT NULL THEN 1 ELSE 0 END) AS Total_Orders
+ FROM	sales s
+ GROUP By s.customer_id, s.product_id;
+
+ -- multiplying total orders by price and taking its sum
+ SELECT 
+     T.customer_id,
+     SUM(T.Total_Orders * price) 'Total Amount Spent'
+ FROM
+     temp AS T
+         JOIN
+     menu M ON M.product_id = T.product_id
+ GROUP BY T.customer_id;
+</code></pre>
+<p><em>Answer</em> <figure><img src="https://anonhan.github.io/Portfolio/images/restaurant/1.png"/>
+</figure>
+
+Customer <strong>A</strong> had spent the highest amount.</p>
+</li>
+<li>
+<p>How many days has each customer visited the restaurant?</p>
+<p>We can easily compute by using the aggregate function on column <em>order_date</em>, and grouping it by <em>customer_id</em>. We will also use DISTINCT() over it, because the sales table has records of all the visits of a particular customer in a day, which is not the requirement of the question.</p>
+<pre><code> SELECT 
+     S.customer_id, 
+     COUNT(S.order_date) AS 'Total Visits'
+ FROM
+     sales S
+ GROUP BY S.customer_id;
+</code></pre>
+<p><em>Answer</em> <figure><img src="https://anonhan.github.io/Portfolio/images/restaurant/2.png"/>
+</figure>
+</p>
+<p>The customer <strong>B</strong> had paid the higher number of visits.</p>
+</li>
+<li>
+<p>What was the first item from the menu purchased by each customer?</p>
+<p>If we look at the sales table we would be able to see that at the same day multiple orders of same product were made, which means that we can&rsquo;t use the <strong>MIN()</strong> on <em>order_date</em> column to extract the first purchase.</p>
+<p>So, we have to use OVER(PARTITION BY) clause here, along with RANK(), and we will pass the <em>customer_id</em> (which we will be used to make groups and assign ranks) and then order by the <em>order_date</em> in <em>asc</em> order.</p>
+<pre><code> -- 1. Assign rank to each purchase of customer based upon date of purchase
+ WITH orders AS(
+ SELECT 
+     customer_id,
+     product_id,
+     rank() over (partition by customer_id order by order_date) as r
+ FROM
+     sales
+     ) 
+
+ -- 2. Get only records that have rank=1, which means oders of very first day.
+ SELECT  customer_id,
+         product_id AS 'First ordered Prouct'
+ FROM 	orders
+ WHERE	r = 1
+ GROUP BY  1,2;
+</code></pre>
+<p><em>Answer</em> <figure><img src="https://anonhan.github.io/Portfolio/images/restaurant/3.png"/>
+</figure>
+
+Customer <strong>A</strong> had ordered both product with id 1 and 2 on the first day.</p>
+</li>
+<li>
+<p>What is the most purchased item on the menu and how many times was it purchased by all customers?</p>
+<p>The simple way to compute the maximum orders is to use the <strong>COUNT()</strong> function and then order it in descending order and then selecting the first record.</p>
+<pre><code> SELECT 
+     M.product_name, COUNT(S.product_id) as Total_orders
+ FROM
+     sales S
+         JOIN
+     menu M ON M.product_id = S.product_id
+ GROUP BY S.product_id , product_name
+ ORDER BY 2 DESC
+ LIMIT 1; 
+</code></pre>
+<p><em>Answer</em> <figure><img src="https://anonhan.github.io/Portfolio/images/restaurant/4.png"/>
+</figure>
+
+<strong>Ramen</strong> was the highest in demand item.</p>
+</li>
+<li>
+<p>Which item was the most popular for each customer?</p>
+<p>Here we are looking for the most ordered products by each customer. A customer could have more than one favorite item with the same number of orders placed.</p>
+<pre><code> -- Step 1: First select that how many times each item has been bought by each customer using group by
+ CREATE TEMPORARY TABLE Products_Bought
+ SELECT  s.customer_id, 
+         s.product_id, 
+         COUNT(s.product_id) as freq
+ FROM    sales s
+ GROUP BY s.customer_id , s.product_id;
+
+ -- Step 2: assigning rank to each subgroup in desc order by Total Orders(freq)
+ WITH Popular_items AS (
+         SELECT	P.customer_id,
+                 P.product_id,
+                 P.freq,
+                 rank() OVER (partition by P.customer_id ORDER By freq DESC) AS ranks
+         FROM	Products_Bought P
+         )
+         SELECT  customer_id,
+                 product_iD,
+                 freq AS Total_Orders
+         FROM 	Popular_items
+         WHERE	ranks = 1;
+</code></pre>
+<p><em>Answer</em> <figure><img src="https://anonhan.github.io/Portfolio/images/restaurant/5.png"/>
+</figure>
+
+Customer <strong>B</strong> had more than one item as favorite.</p>
+</li>
+<li>
+<p>Which item was purchased first by the customer after they became a member?</p>
+<p>First thing to keep in mind is that membership date should be greater than or equal to the date of purchase.
+Secondly, we only want to select those customer who are in the list of customers.
+Finally, we use rank() function to rank each subgroup in ascending order of purchase date (to assign the rank 1 to the first date of purchase)</p>
+<pre><code> WITH member_first_purchase AS (
+     SELECT  sales.customer_id, 
+             order_date, 
+             product_id,
+             RANK() OVER (PARTITION BY customer_id ORDER BY order_date ASC) AS ranks
+     FROM
+         sales,
+         members
+     WHERE
+         order_date &gt;= join_date
+             AND sales.customer_id = members.customer_id
+     ORDER BY order_date ASC
+     ) 
+     SELECT  customer_id,
+             order_date,
+             product_id
+     FROM    member_first_purchase 
+     WHERE   ranks=1;
+</code></pre>
+<p><em>Answer</em> <figure><img src="https://anonhan.github.io/Portfolio/images/restaurant/6.png"/>
+</figure>
+
+Customer <strong>A</strong> had order the product with id which is curry and customer <strong>B</strong> had placed an order of sushi after becoming the member. As customer <strong>C</strong> had not purchased membership, so that is the reason there is no record for him.</p>
+</li>
+<li>
+<p>Which item was purchased just before the customer became a member?</p>
+<p>The same logic of the previous problem can be applied here, we just need to change the where clause to <strong>&lt;</strong> and the rank() should be ordered in descending order, because we want to show the last order just before the member.</p>
+<pre><code> WITH member_last_purchase AS (
+     SELECT  sales.customer_id, 
+             order_date, 
+             product_id,
+             rank() OVER (PARTITION BY customer_id ORDER BY order_date DESC) AS ranks
+     FROM
+         sales,
+         members
+     WHERE
+         order_date &lt; join_date
+             AND sales.customer_id = members.customer_id
+     ORDER BY order_date ASC
+     ) 
+     SELECT  customer_id,
+             order_date,
+             product_id
+     FROM    member_last_purchase 
+     WHERE   ranks=1;
+</code></pre>
+<p><em>Answer</em> <figure><img src="https://anonhan.github.io/Portfolio/images/restaurant/7.png"/>
+</figure>
+
+Customer <strong>A</strong> had placed two orders and customer <strong>B</strong> had placed single order before becoming member.</p>
+</li>
+<li>
+<p>What is the total items and amount spent for each member before they became a member?
+This time we are required to fetch the price as well, rest of the logic remains same.</p>
+<pre><code> WITH amount_spent_b4_membership AS (
+     SELECT  sales.customer_id,
+             product_id,
+             COUNT(product_id) AS Total_Orders
+     FROM
+         sales,
+         members
+     WHERE
+         order_date &lt; join_date
+             AND sales.customer_id = members.customer_id
+     GROUP BY sales.customer_id, product_id
+     ORDER BY order_date ASC
+     ) 
+     SELECT  customer_id,
+             SUM(Total_Orders * Price) AS Amount_spent
+     FROM    amount_spent_b4_membership A, menu M
+     WHERE   A.product_id = M.product_id
+     GROUP BY customer_id;
+</code></pre>
+<p><em>Answer</em> <figure><img src="https://anonhan.github.io/Portfolio/images/restaurant/8.png"/>
+</figure>
+
+Customer <strong>A</strong> had spent $25 and <strong>B</strong> had spent $40.</p>
+</li>
+<li>
+<p>If each $1 spent equates to 10 points and sushi has a 2x points multiplier - how many points would each customer have?</p>
+<p>First, select all the total orders booked by each customer for different products along with the product_id (especially Sushi). Count the total points then.</p>
+<pre><code> WITH total_points AS (
+             SELECT 
+                 customer_id,
+                 product_id,
+                 COUNT(product_id) AS Total_Orders,
+                 SUM(CASE WHEN product_id = 1 THEN 1 ELSE 0 END) AS Sushi
+             FROM
+                 sales
+             GROUP BY customer_id , product_id
+             )
+             SELECT  customer_id,
+                     SUM((CASE WHEN T.Sushi&lt;&gt;0 THEN Price*T.Sushi*20 ELSE 0 END) + ((Total_Orders-Sushi) * Price)*10) as points
+             FROM total_points T, menu M where T.product_id = M.product_id
+             group by 1;
+</code></pre>
+<p><em>Answer</em> <figure><img src="https://anonhan.github.io/Portfolio/images/restaurant/9.png"/>
+</figure>
+
+Customer <strong>B</strong> had the highest points.</p>
+</li>
+</ol>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="#E8FDF5 bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://anonhan.github.io/Portfolio/" >
+    &copy;  Sahil Sharma 2022 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+    <a href="https://github.com/anonhan" target="_blank" class="github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="GitHub link" rel="noopener" aria-label="follow on GitHub——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

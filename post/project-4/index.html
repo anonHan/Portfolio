@@ -39,7 +39,7 @@
 <meta itemprop="name" content="Pizza Store Analysis">
 <meta itemprop="description" content="A comprehensive case study using SQL"><meta itemprop="datePublished" content="2022-08-05T10:58:08-04:00" />
 <meta itemprop="dateModified" content="2022-08-05T10:58:08-04:00" />
-<meta itemprop="wordCount" content="1327">
+<meta itemprop="wordCount" content="1324">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Pizza Store Analysis"/>
 <meta name="twitter:description" content="A comprehensive case study using SQL"/>
@@ -171,11 +171,19 @@
 <p>Danny started by recruiting “runners” to deliver fresh pizza from Pizza Runner Headquarters (otherwise known as Danny’s house) and also maxed out his credit card to pay freelance developers to build a mobile app to accept orders from customers.</p>
 <h3 id="quick-tip">Quick Tip</h3>
 <p>How you can make use of this case study effectively?</p>
-<p>The best approach to start with these questions is first trying to understand the question that is being asked, writing down the requirements of the problem and then jumping back to your SQL engine to write the query. However, I have also provided the <strong>hints</strong> for some of the questions.
-Explantion is also provided for some of the queries for making the things eaiser to understand.</p>
+<p>The best approach to start with these questions is first trying to understand the question that is being asked, writing down the requirements of the problem and then jumping back to your SQL engine to write the query. However, I have also provided the <strong>hints</strong> for some questions.
+Explanation is also provided for some queries for making the things easier to understand.</p>
 <h5 id="note-for-each-problem-there-are-various-ways-to-formulate-the-same-sql-query-but-the-results-shouldnt-vary"><strong>NOTE</strong>: For each problem, there are various ways to formulate the same SQL query, but the results shouldn&rsquo;t vary.</h5>
 <h3 id="database-schema">Database Schema</h3>
-<p>There are six tables in total namely <strong>runners</strong>, <strong>customer_orders</strong>, <strong>runner_orders</strong>, <strong>pizza_names</strong>, <strong>pizza_recipes</strong>, and <strong>pizza_toppings</strong>.</p>
+<p>There are six tables in total for this case study:</p>
+<ul>
+<li>runners</li>
+<li>customer_orders</li>
+<li>runner_orders</li>
+<li>pizza_names</li>
+<li>pizza_toppings</li>
+<li>pizza_recipes</li>
+</ul>
 <h5 id="entity-relationship-diagram">Entity Relationship Diagram</h5>
 <figure><img src="https://anonhan.github.io/Portfolio/images/Pizza_runner/entity.png"/>
 </figure>
@@ -186,7 +194,7 @@ Explantion is also provided for some of the queries for making the things eaiser
 <ul>
 <li>Pizza Metrics</li>
 <li>Runner and Customer Experience</li>
-<li>Ingredient Optimisation</li>
+<li>Ingredient Optimization</li>
 <li>Pricing and Ratings</li>
 <li>Bonus DML Challenges (DML = Data Manipulation Language)</li>
 </ul>
@@ -194,7 +202,7 @@ Explantion is also provided for some of the queries for making the things eaiser
 <ol>
 <li>
 <p>How many pizzas were ordered?</p>
-<p>To answer this, first we need to understand that a customer can order multiple pizzas in a single order, as the requirement is to count the total number of pizzas that were ordered, so we have to include all the orders with the same order id.</p>
+<p>To answer this, first we need to understand that a customer can order multiple pizzas in a single order, as the requirement is to count the total number of pizzas that were ordered, so we have to include all the orders with the same order ID.</p>
 <pre><code> SELECT  COUNT(order_id) AS Total_orders
  FROM    customer_orders;
 </code></pre>
@@ -218,13 +226,13 @@ Explantion is also provided for some of the queries for making the things eaiser
 <p>How many successful orders were delivered by each runner?</p>
 <p>Hint: If the cancellation column in runner_orders table does not contain any information regarding the cancellation, then it means that a particular order was cancelled.</p>
 <p>We can also use duration (it&rsquo;s quite simple, you can try it out), so let&rsquo;s see how to get the results using the cancellation column.</p>
-<p>Let&rsquo;s have look at the runner_orders first.</p>
+<p>Let&rsquo;s have a look at the runner_orders first.</p>
 <pre><code> SELECT * FROM runner_orders;
 </code></pre>
 <figure><img src="https://anonhan.github.io/Portfolio/images/Pizza_runner/runner_order.png"/>
     </figure>
 
-<p>As we can see under the <em>cancellation</em> column categorical values are there, and some of the values are missing. So, we need to clean this before moving ahead.</p>
+<p>As we can see, under the <em>cancellation</em> column categorical values are there, and some values are missing. So, we need to clean this before moving ahead.</p>
 <p>Replace everything with NULL except the cell that contain information regarding the cancellation of the order.</p>
 <pre><code> UPDATE  runner_orders 
      SET cancellation = NULL 
@@ -235,7 +243,7 @@ Explantion is also provided for some of the queries for making the things eaiser
 <figure><img src="https://anonhan.github.io/Portfolio/images/Pizza_runner/A3_runner_orders.png"/>
     </figure>
 
-<p>The <em>cancellation</em> column looks good now. Let&rsquo;s write the quer now.</p>
+<p>The <em>cancellation</em> column looks good now. Let&rsquo;s write the query now.</p>
 <pre><code> SELECT 
      runner_id, COUNT(*) AS successful_orders
  FROM
@@ -247,7 +255,7 @@ Explantion is also provided for some of the queries for making the things eaiser
 <figure><img src="https://anonhan.github.io/Portfolio/images/Pizza_runner/A3.png"/>
     </figure>
 
-<p><em>Answer</em>: <strong>Runner 1</strong> had the highest number of successfull delivered orders.</p>
+<p><em>Answer</em>: <strong>Runner 1</strong> had the highest number of successful delivered orders.</p>
 </li>
 <li>
 <p>How many of each type of pizza was delivered?</p>
@@ -322,7 +330,7 @@ Explantion is also provided for some of the queries for making the things eaiser
     </figure>
 
 <p>We can see that both the extras and exclusions columns are not a format to be used without cleaning.</p>
-<pre><code> -- update exlusions column
+<pre><code> -- update exclusions column
  UPDATE customer_orders SET exclusions = NULL WHERE exclusions LIKE &quot;%null%&quot; OR exclusions LIKE &quot;&quot;;
 
  -- update extras column
@@ -334,7 +342,7 @@ Explantion is also provided for some of the queries for making the things eaiser
 <figure><img src="https://anonhan.github.io/Portfolio/images/Pizza_runner/cust_orders_c.png"/>
     </figure>
 
-<p>Let&rsquo;s answer our question now. We will use the simple logic here, if the exlusions and extras is NULL then it means the changes were not made otherwise we can say that the atleast one change was made during booking of the order.</p>
+<p>Let&rsquo;s answer our question now. We will use the simple logic here, if the exclusions and extras is NULL then it means the changes were not made, otherwise we can say that the at least one change was made during booking of the order.</p>
 <pre><code> SELECT 
      customer_id,
      SUM(CASE
@@ -360,7 +368,7 @@ Explantion is also provided for some of the queries for making the things eaiser
 </li>
 <li>
 <p>How many pizzas were delivered that had both exclusions and extras?</p>
-<p>It is very much similar to the previous quesion, we just need to replace the OR with AND in the change_made column.</p>
+<p>It is very much similar to the previous question, we just need to replace the OR with AND in the change_made column.</p>
 <pre><code> SELECT 
      pizza_id,
      SUM(CASE
@@ -393,11 +401,11 @@ Only the Meatlovers Pizza had both the extras and exclusions.</p>
 <p><em>Answer</em> <figure><img src="https://anonhan.github.io/Portfolio/images/Pizza_runner/A9.png"/>
 </figure>
 
-We can obeserve that most of the orders were comming at 1pm, 6pm, 9pm and 11pm.</p>
+We can observe that most of the orders were coming at 1pm, 6pm, 9pm and 11pm.</p>
 </li>
 <li>
 <p>What was the volume of orders for each day of the week?</p>
-<p>In order to get the name of the each day of the week, we can use DAYNAME() function, which will return the name of the day for the five date.</p>
+<p>In order to get the name of the day of the week, we can use DAYNAME() function, which will return the name of the day for the five date.</p>
 <pre><code>SELECT 
     DAYNAME(order_time) AS Week, 
     COUNT(order_id) AS Total_orders
@@ -409,10 +417,10 @@ ORDER BY 1 ASC;
 <p><em>Answer</em> <figure><img src="https://anonhan.github.io/Portfolio/images/Pizza_runner/A10.png"/>
 </figure>
 
-The maximum number of orders were recored on Saturday and Wednesday, which is 5.</p>
+The maximum number of orders were recorded on Saturday and Wednesday, which is 5.</p>
 </li>
 </ol>
-<h4 id="final-note-i-am-still-working-on-the-case-studies-and-soon-going-to-upload-the-remaing-answers-so-stay-tuned-and-keep-learning">Final Note: I am still working on the case studies and soon going to upload the remaing answers. So stay tuned and Keep Learning!</h4>
+<h4 id="final-note-i-am-still-working-on-the-case-studies-and-soon-going-to-upload-the-remaining-answers-so-stay-tuned-and-keep-learning">Final Note: I am still working on the case studies and soon going to upload the remaining answers. So stay tuned and Keep Learning!</h4>
 <ul class="pa0">
   
 </ul>
