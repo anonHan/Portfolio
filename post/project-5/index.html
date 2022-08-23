@@ -39,7 +39,7 @@
 <meta itemprop="name" content="Restaurant Analysis">
 <meta itemprop="description" content="Analysis of the customer buying patterns"><meta itemprop="datePublished" content="2022-07-20T10:58:08-04:00" />
 <meta itemprop="dateModified" content="2022-07-20T10:58:08-04:00" />
-<meta itemprop="wordCount" content="1321">
+<meta itemprop="wordCount" content="1785">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Restaurant Analysis"/>
 <meta name="twitter:description" content="Analysis of the customer buying patterns"/>
@@ -407,7 +407,95 @@ Customer <strong>A</strong> had spent $25 and <strong>B</strong> had spent $40.<
 
 Customer <strong>B</strong> had the highest points.</p>
 </li>
+<li>
+<p>In the first week after a customer joins the program (including their join date) they earn 2x points on all items, not just sushi - how many points do customer A and B have at the end of January?</p>
+<p>If you were able to come up with a solution for the previous question, then this would be a piece of cake for you. In this script, we are calculating membership days column, which shoul be within the 7 days of membership (as mentioned in the question), then we are using the case statmenent, i.e if the order was booked withing the 7 days of membership then in that case double the points regardless of the product name, and if the order was sushi then also double the points, else multiply it by 10. Also keep in mind we only need to get the records on or before 31 of January 2021.</p>
+<pre><code>WITH orders
+AS (SELECT s.customer_id,
+            s.order_date, join_date,
+            s.product_id,
+            Datediff(s.order_date, m.join_date) AS membership_days,
+            Sum(CASE
+                WHEN product_id = 1 THEN 1
+                ELSE 0
+                END)                            AS Sushi,
+            Count(product_id)                   AS orders
+    FROM   sales s,
+            members m
+    WHERE  s.customer_id = m.customer_id
+            AND order_date &lt;= '2021-01-31'
+    GROUP  BY 1,2,3,4,5)
+SELECT O.customer_id,
+    Sum(CASE
+            WHEN membership_days BETWEEN 0 AND 7 THEN orders * price * 20
+            WHEN sushi &lt;&gt; 0 THEN orders * price * 20
+            ELSE orders * price * 10
+        END) AS points
+FROM   orders O
+    JOIN menu M
+        ON O.product_id = M.product_id
+GROUP  BY 1; 
+</code></pre>
+<p><em>Answer</em> <figure><img src="https://anonhan.github.io/Portfolio/images/restaurant/10.png"/>
+</figure>
+
+Customer <strong>A</strong> had 1370 points and customer <strong>B</strong> had 940 points.</p>
+</li>
 </ol>
+<h4 id="bonus-questions">BONUS QUESTIONS</h4>
+<h5 id="joining-all-the-tables">Joining All the Tables</h5>
+<p>The following questions are related creating basic data tables that Danny and his team can use to quickly derive insights without needing to join the underlying tables using SQL.</p>
+<pre><code>    SELECT 
+        s.customer_id,
+        s.order_date,
+        m.product_name,
+        m.price,
+        CASE
+            WHEN s.order_date &gt;= join_date THEN 'Y'
+            ELSE 'N'
+        END AS member
+    FROM
+        sales s
+            LEFT JOIN
+        menu m ON m.product_id = s.product_id
+            LEFT JOIN
+        members ON members.customer_id = s.customer_id limit 100;
+</code></pre>
+<p><em>Answer</em> <figure><img src="https://anonhan.github.io/Portfolio/images/restaurant/b1.png"/>
+</figure>
+</p>
+<h5 id="rank-all-the-things">Rank All The Things</h5>
+<p>Danny also requires further information about the ranking of customer products, but he purposely does not need the ranking for non-member purchases so he expects null ranking values for the records when customers are not yet part of the loyalty program. 
+WITH rank_table AS (</p>
+<pre><code>    SELECT 
+	    s.customer_id,
+	    s.order_date,
+	    m.product_name,
+	    m.price,
+	    CASE
+	    	WHEN s.order_date &gt;= join_date THEN 'Y'
+	    	ELSE 'N'
+	    END AS Member
+	FROM
+	    sales s
+	    	LEFT JOIN
+	    menu m ON m.product_id = s.product_id
+	    	LEFT JOIN
+	    members ON members.customer_id = s.customer_id limit 100
+	)
+    SELECT  customer_id,
+	    order_date,
+            product_name,
+            price,
+            member,
+            CASE WHEN member='N' THEN NULL ELSE ROW_NUMBER() OVER (PARTITION BY member,customer_id) END AS ranking
+    FROM    rank_table
+    ORDER BY customer_id;
+</code></pre>
+<p><em>Answer</em> <figure><img src="https://anonhan.github.io/Portfolio/images/restaurant/b2.png"/>
+</figure>
+</p>
+<p><strong>Credits</strong>: A special thanks to <a href="https://www.linkedin.com/in/datawithdanny/">Dannyma</a> for creating this comprehensive  case study. More about the case study you can read out here <a href="https://8weeksqlchallenge.com/">8-Week SQL Challenge</a>.</p>
 <ul class="pa0">
   
 </ul>

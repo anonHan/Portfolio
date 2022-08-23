@@ -39,7 +39,7 @@
 <meta itemprop="name" content="Baton Rouge City Crime">
 <meta itemprop="description" content="Analysing and Predicting the Baton Rouge City Crime Rate"><meta itemprop="datePublished" content="2022-08-18T10:58:08-04:00" />
 <meta itemprop="dateModified" content="2022-08-18T10:58:08-04:00" />
-<meta itemprop="wordCount" content="3263">
+<meta itemprop="wordCount" content="3641">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Baton Rouge City Crime"/>
 <meta name="twitter:description" content="Analysing and Predicting the Baton Rouge City Crime Rate"/>
@@ -177,6 +177,7 @@
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> squarify
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> plotly.express <span style="color:#66d9ef">as</span> ex
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> datetime <span style="color:#66d9ef">as</span> dt
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.metrics <span style="color:#f92672">import</span> mean_squared_error, mean_absolute_error, mean_absolute_percentage_error
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Graph Settings</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> jupyterthemes <span style="color:#f92672">import</span> jtplot
 </span></span><span style="display:flex;"><span>jtplot<span style="color:#f92672">.</span>style(context<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;talk&#39;</span>, fscale<span style="color:#f92672">=</span><span style="color:#ae81ff">1.4</span>, spines<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, gridlines<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;--&#39;</span>)
@@ -310,7 +311,7 @@ memory usage: 56.1+ MB
 <h3 id="exploratory-data-analysiseda">Exploratory Data Analysis(EDA)</h3>
 <p>Now it&rsquo;s time to ask some good questions to our data, and then see how it reveals the becutiful insights. So grab your notebook and start jotting down the questions that you might
 want to get answer.</p>
-<h5 id="1-what-are-the-most-common-crime-by-category">1. What are the most common Crime by category?</h5>
+<h5 id="1-what-are-the-most-common-crimes-by-category">1. What are the most common crimes by category?</h5>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sort_order <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#39;CRIME&#39;</span>)[<span style="color:#e6db74">&#39;CRIME&#39;</span>]<span style="color:#f92672">.</span>agg(<span style="color:#e6db74">&#39;count&#39;</span>)<span style="color:#f92672">.</span>sort_values(ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
 </span></span><span style="display:flex;"><span>ax <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>countplot(y<span style="color:#f92672">=</span>df[<span style="color:#e6db74">&#39;CRIME&#39;</span>],order<span style="color:#f92672">=</span>sort_order<span style="color:#f92672">.</span>index,palette<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;bone&#39;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> ax<span style="color:#f92672">.</span>containers:
@@ -349,7 +350,7 @@ want to get answer.</p>
 <ol>
 <li>THEFT/MISD/CC holds the highest number of crimes that were being committed, which is approximately 26K, while the second graph shows the least number of crimes.</li>
 </ol>
-<h5 id="3-what-are-the-top-20-offense-sectionsarticles-that-were-voilated">3. What are the top 20 Offense sections/articles that were voilated?</h5>
+<h5 id="3-what-are-the-top-10-offense-sectionsarticles-that-were-voilated">3. What are the top 10 Offense sections/articles that were voilated?</h5>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>top_offense <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#39;OFFENSE&#39;</span>)[<span style="color:#e6db74">&#39;OFFENSE&#39;</span>]<span style="color:#f92672">.</span>agg(<span style="color:#e6db74">&#39;count&#39;</span>)<span style="color:#f92672">.</span>sort_values(ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)[:<span style="color:#ae81ff">10</span>]
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">12</span>,<span style="color:#ae81ff">12</span>))
@@ -364,7 +365,7 @@ want to get answer.</p>
 <li>Section .588194444 was violated the highest number of times, followed by 13:56.</li>
 </ul>
 <p><strong>NOTE</strong>: While analyzing different sections/articles which are under the laws of the United States, some of the sections were not available on the internet, while some of them have documents that mention those articles clearly.</p>
-<h5 id="3-what--was-the-proportion-of-crime-cases-reported-in-each-district-complete-district">3. What  was the proportion of crime cases reported in each district (Complete District)?</h5>
+<h5 id="4-what--was-the-proportion-of-crime-cases-reported-in-each-district-complete-district">4. What  was the proportion of crime cases reported in each district (Complete District)?</h5>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>crime_byDist <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#39;COMPLETE DISTRICT&#39;</span>)[<span style="color:#e6db74">&#39;COMPLETE DISTRICT&#39;</span>]<span style="color:#f92672">.</span>agg(<span style="color:#e6db74">&#39;count&#39;</span>)<span style="color:#f92672">.</span>sort_values(ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
 </span></span><span style="display:flex;"><span>per_crime_byDist <span style="color:#f92672">=</span> (crime_byDist<span style="color:#f92672">/</span>crime_byDist<span style="color:#f92672">.</span>sum())<span style="color:#f92672">*</span><span style="color:#ae81ff">100</span>
 </span></span><span style="display:flex;"><span>
@@ -382,7 +383,7 @@ want to get answer.</p>
 <li>District 1C4 seem to be the least violent city.</li>
 <li>We can also see that some of the districts are not in a proper format, such as 1.00E+01, which means it was not formatted properly. So we may need to clean it, to present in a proper format.</li>
 </ul>
-<h5 id="4-lets-analyse-it-in-depth-and-find-some-interesting-insights">4. Let&rsquo;s analyse it in depth, and find some interesting insights.</h5>
+<h5 id="5-lets-analyse-it-in-depth-and-find-some-interesting-insights">5. Let&rsquo;s analyse it in depth, and find some interesting insights.</h5>
 <p>First we will try to find out quantile where the 50% of the data will be less and 50% of the data will be lower than it.</p>
 <p>Why we are doing so?</p>
 <p>Because this will help us to understand that what is a number of districts from which 50% of the crimes were being registered.</p>
@@ -409,7 +410,7 @@ want to get answer.</p>
 <li>And that&rsquo;s not only thing that would help in the reduction of the crimes in these districts, they may need to find the root cause of higher crime rate by interacting with the people of the districts, to understand that what is influencing the criminals to go violent.</li>
 <li>It could be unemployment, lack of education, and some other factors.</li>
 </ul>
-<h5 id="5-average-crime-rate-in-both-the-halves-of-the-districts">5. Average crime rate in both the halves of the districts.</h5>
+<h5 id="6-average-crime-rate-in-both-the-halves-of-the-districts">6. Average crime rate in both the halves of the districts.</h5>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;Average crime rate in top 18 districts is </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">%.&#39;</span><span style="color:#f92672">.</span>format(round(np<span style="color:#f92672">.</span>average(top_crime_dist<span style="color:#f92672">.</span>values),<span style="color:#ae81ff">3</span>)))
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># getting the remaining dists</span>
@@ -423,7 +424,7 @@ Average crime rate in remaining 69 districts is 0.735%.
 <ul>
 <li>The average crime rate in the top 18 districts is extremly high when compared to the remainig 69 districts.</li>
 </ul>
-<h5 id="6-lets-dig-deeper-and-foucs-on-these-18-districts">6. Let&rsquo;s dig deeper and foucs on these 18 districts</h5>
+<h5 id="7-lets-dig-deeper-and-foucs-on-these-18-districts">7. Let&rsquo;s dig deeper and foucs on these 18 districts</h5>
 <p>Now, we will try to find out top street names from where which top cases are coming from.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># grab all the top 18 districts</span>
 </span></span><span style="display:flex;"><span>dist_19 <span style="color:#f92672">=</span> df[(df[<span style="color:#e6db74">&#39;COMPLETE DISTRICT&#39;</span>]<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;2C3&#39;</span>)<span style="color:#f92672">|</span>
@@ -464,11 +465,11 @@ Average crime rate in remaining 69 districts is 0.735%.
 <ul>
 <li>Plank and Florida street seem to be the most affected streets where most number of criminals activities took place.</li>
 </ul>
-<h5 id="7-what-is-total-proportion-of-crime-in-top-10-streets">7. What is total proportion of crime in top 10 streets?</h5>
+<h5 id="8-what-is-total-proportion-of-crime-in-top-10-streets">8. What is total proportion of crime in top 10 streets?</h5>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;Percentage of Crimes cases in top 10 streets is </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">% (cosidering the 18 districts only).&#39;</span><span style="color:#f92672">.</span>format(round(per_crime_byStreet<span style="color:#f92672">.</span>sum(),<span style="color:#ae81ff">3</span>)))
 </span></span></code></pre></div><pre><code>Percentage of Crimes cases in top 10 streets is 23.891% (cosidering the 18 districts only).
 </code></pre>
-<h5 id="8-compare-top-10-streets-crimes-cases-to-the-total-number-of-crimes-in-the-dataset-and-find-out-the-percentage">8. Compare top 10 streets crimes cases to the total number of crimes in the dataset and find out the percentage.</h5>
+<h5 id="9-compare-top-10-streets-crimes-cases-to-the-total-number-of-crimes-in-the-dataset-and-find-out-the-percentage">9. Compare top 10 streets crimes cases to the total number of crimes in the dataset and find out the percentage.</h5>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Logic to implement this question is:</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># sum of top 10 street Crimes/total number of crimes in the dataset</span>
 </span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;Proportion of Crimes in top 10 streets by the total number of crimes in the whole city is </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">%.&#39;</span><span style="color:#f92672">.</span>format(round((crime_byStreet[:<span style="color:#ae81ff">10</span>]<span style="color:#f92672">.</span>sum()<span style="color:#f92672">/</span>len(df))<span style="color:#f92672">*</span><span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">2</span>)))
@@ -480,7 +481,7 @@ Average crime rate in remaining 69 districts is 0.735%.
 </ul>
 <h4 id="lets-return-back-to-our-complete-set--of-data-now">Let&rsquo;s return back to our complete set  of data now.</h4>
 <p>As we know that there is hierarcy present in the dataset, under different locaion columns. However, unfortunately we cannot visualize it using python. So, I will try to represent in the from of graphs and figures.</p>
-<h5 id="9-at-what-time-of-the-day-most-of-the-crimes-were-commitedreported">9. At what time of the day most of the crimes were commited/reported?</h5>
+<h5 id="10-at-what-time-of-the-day-most-of-the-crimes-were-commitedreported">10. At what time of the day most of the crimes were commited/reported?</h5>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># In order to group the data by time on hourly basis, we are required to take only the hour of the day.</span>
 </span></span><span style="display:flex;"><span>df[<span style="color:#e6db74">&#39;Hour&#39;</span>] <span style="color:#f92672">=</span> [i[:<span style="color:#ae81ff">2</span>] <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> df[<span style="color:#e6db74">&#39;Time&#39;</span>]] 
 </span></span><span style="display:flex;"><span>df[<span style="color:#e6db74">&#39;Hour&#39;</span>]<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">5</span>)
@@ -509,7 +510,7 @@ Name: Hour, dtype: object
 <li>The time frame between 3 PM and 12 AM seem to be the most critical, where more than 25K crimes were committed at each hour (do not generalize it as 25K crimes per day).</li>
 <li>The highest number of crimes were happened at 12AM, which constitutes more than 6% of the total crimes in the 10 years.</li>
 </ul>
-<h5 id="10-what-is-total-proportion-of-crimes-committed-between-3pm-and-12am-to-the-total-number-of-crimes-in-the-dataset">10. What is total proportion of crimes committed between 3PM and 12AM to the total number of crimes in the dataset?</h5>
+<h5 id="11-what-is-total-proportion-of-crimes-committed-between-3pm-and-12am-to-the-total-number-of-crimes-in-the-dataset">11. What is total proportion of crimes committed between 3PM and 12AM to the total number of crimes in the dataset?</h5>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>from3to12 <span style="color:#f92672">=</span> hour_g<span style="color:#f92672">.</span>loc[[<span style="color:#e6db74">&#39;15&#39;</span>,<span style="color:#e6db74">&#39;16&#39;</span>,<span style="color:#e6db74">&#39;17&#39;</span>,<span style="color:#e6db74">&#39;18&#39;</span>,<span style="color:#e6db74">&#39;19&#39;</span>,<span style="color:#e6db74">&#39;20&#39;</span>,<span style="color:#e6db74">&#39;21&#39;</span>,<span style="color:#e6db74">&#39;22&#39;</span>,<span style="color:#e6db74">&#39;23&#39;</span>,<span style="color:#e6db74">&#39;00&#39;</span>]]<span style="color:#f92672">.</span>sum()
 </span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;Percentage of Crimes between 3PM to 12AM is </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">%&#39;</span><span style="color:#f92672">.</span>format(round((from3to12<span style="color:#f92672">/</span>len(df))<span style="color:#f92672">*</span><span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">3</span>)))
 </span></span></code></pre></div><pre><code>Percentage of Crimes between 3PM to 12AM is 54.911%
@@ -518,8 +519,8 @@ Name: Hour, dtype: object
 <ul>
 <li>More than 54% of the crimes were committed between 3PM to 12AM, which is quite a large percentage. And shows a pattern that might help the City Authorities in reduction of the crime rate.</li>
 </ul>
-<h5 id="11-get-the-total-number-of-deaths-on-each-day-week-month-of-the-year">11. Get the total number of deaths on each day, week, month of the year.</h5>
-<h5 id="11a-number-of-crimes-each-day">11.A. Number of crimes each day.</h5>
+<h5 id="12-get-the-total-number-of-deaths-on-each-day-week-month-of-the-year">12. Get the total number of deaths on each day, week, month of the year.</h5>
+<h5 id="12a-number-of-crimes-each-day">12.A. Number of crimes each day.</h5>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># First let&#39;s check the data type of the date column</span>
 </span></span><span style="display:flex;"><span>df[<span style="color:#e6db74">&#39;date&#39;</span>]<span style="color:#f92672">.</span>dtype
 </span></span></code></pre></div><pre><code>dtype('O')
@@ -558,7 +559,7 @@ Name: Hour, dtype: object
 </figure>
 
 It looks better now&hellip;</p>
-<h5 id="11b-number-of-crimes-each-week">11.B. Number of crimes each week</h5>
+<h5 id="12b-number-of-crimes-each-week">12.B. Number of crimes each week</h5>
 <p><em>First, we group the data by week, for this we will use numpy array to group the data. Ideally we should get around 520 weeks</em></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># group by week </span>
 </span></span><span style="display:flex;"><span>week_group <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>groupby(np<span style="color:#f92672">.</span>array(df[<span style="color:#e6db74">&#39;date&#39;</span>],dtype<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;datetime64[W]&#39;</span>))[<span style="color:#e6db74">&#39;date&#39;</span>]<span style="color:#f92672">.</span>agg(<span style="color:#e6db74">&#39;count&#39;</span>)
@@ -575,7 +576,7 @@ It looks better now&hellip;</p>
 <li>Overall, the number of crimes have been decreased greatly by approximately 55% in the during of 10 years.</li>
 <li>We can also observe a slight pattern in where the number of crimes committed spikes in the beginning of the year and after staying on the top for few months, it starts plunging down. Let&rsquo;s make it clear by grouping it monthly.</li>
 </ul>
-<h5 id="11c-number-of-crimes-each-month">11.C. Number of crimes each month</h5>
+<h5 id="12c-number-of-crimes-each-month">12.C. Number of crimes each month</h5>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># group by month</span>
 </span></span><span style="display:flex;"><span>month_group <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>groupby(np<span style="color:#f92672">.</span>array(df[<span style="color:#e6db74">&#39;date&#39;</span>],dtype<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;datetime64[M]&#39;</span>))[<span style="color:#e6db74">&#39;date&#39;</span>]<span style="color:#f92672">.</span>agg(<span style="color:#e6db74">&#39;count&#39;</span>)
 </span></span><span style="display:flex;"><span>
@@ -590,6 +591,7 @@ It looks better now&hellip;</p>
 <ul>
 <li>There is certainly a pattern, where the crime rate is increasing during the start of the year and decreasing in the end of the year.</li>
 </ul>
+<h5 id="12d-number-of-crimes-each-month">12.D. Number of crimes each month</h5>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># group by year</span>
 </span></span><span style="display:flex;"><span>year_group <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>groupby(np<span style="color:#f92672">.</span>array(df[<span style="color:#e6db74">&#39;date&#39;</span>],dtype<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;datetime64[Y]&#39;</span>))[<span style="color:#e6db74">&#39;date&#39;</span>]<span style="color:#f92672">.</span>agg(<span style="color:#e6db74">&#39;count&#39;</span>)
 </span></span><span style="display:flex;"><span>
@@ -597,13 +599,16 @@ It looks better now&hellip;</p>
 </span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">16</span>,<span style="color:#ae81ff">4</span>))
 </span></span><span style="display:flex;"><span>fig <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>lineplot(x<span style="color:#f92672">=</span>year_group<span style="color:#f92672">.</span>index,y<span style="color:#f92672">=</span>year_group<span style="color:#f92672">.</span>values)
 </span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
-</span></span></code></pre></div><h5 id="obervation">Obervation</h5>
+</span></span></code></pre></div><figure><img src="https://anonhan.github.io/Portfolio/images/Crime/year.png"/>
+</figure>
+
+<h5 id="obervation">Obervation</h5>
 <ul>
 <li>No doubt that the number of crime getting committed had dcreased from around 62K in 2011 to around 38K in the year 2020.</li>
 </ul>
 <h5 id="aggregating-data-by-date-and-making-a-new-dataframe">Aggregating data by date and making a new Dataframe</h5>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df_new <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>pivot_table(index<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;date&#39;</span>],values<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;COMMITTED&#39;</span>],aggfunc<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;count&#39;</span>)
-</span></span></code></pre></div><h5 id="12-distribution-of-the-data">12. Distribution of the data</h5>
+</span></span></code></pre></div><h5 id="13-distribution-of-the-data">13. Distribution of the data</h5>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">5</span>))
 </span></span><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>kdeplot(data<span style="color:#f92672">=</span>df_new)
 </span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
@@ -611,7 +616,7 @@ It looks better now&hellip;</p>
 </figure>
 
 <p>The data is distributed normally, while there are some outliers present at the right tail of the distribution.</p>
-<h5 id="13-analysing-the-trend-seasonality-using-statsmodel">13. Analysing the Trend, seasonality using statsmodel</h5>
+<h5 id="14-analysing-the-trend-seasonality-using-statsmodel">14. Analysing the Trend, seasonality using statsmodel</h5>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> statsmodels.tsa.seasonal <span style="color:#f92672">import</span> seasonal_decompose
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># we will use the weekly data to viualize it.</span>
@@ -785,10 +790,78 @@ pandas.Int64Index is deprecated and will be removed from pandas in a future vers
 </span></span></code></pre></div><figure><img src="https://anonhan.github.io/Portfolio/images/Crime/untitled_92_0.png"/>
 </figure>
 
-<h5 id="observation-15">Observation</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># measuring performance</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">performance_metrics</span>(y_tr,y_pred):
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#39;MAE: </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(round(mean_absolute_error(y_tr, y_pred),<span style="color:#ae81ff">2</span>)))
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#39;MSE:</span><span style="color:#e6db74">{}</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(round(np<span style="color:#f92672">.</span>sqrt(mean_squared_error(y_tr, y_pred)), <span style="color:#ae81ff">2</span>)))
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#39;MAPE:</span><span style="color:#e6db74">{}</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(round(np<span style="color:#f92672">.</span>sqrt(mean_absolute_percentage_error(y_tr, y_pred)), <span style="color:#ae81ff">2</span>)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>performance_metrics(test[<span style="color:#e6db74">&#39;COMMITTED&#39;</span>],test[<span style="color:#e6db74">&#39;pred&#39;</span>])
+</span></span></code></pre></div><pre tabindex="0"><code>MAE: 59.04
+MSE:72.42
+MAPE:0.28
+</code></pre><h5 id="observation-15">Observation</h5>
 <ul>
 <li>XGBoost is clearly doing a great job, where it is closely predicting the number of cases. However, there is still a room for improvement in this model, where we can optimize the hyperparameters using GridsearchCV(), and further improve the performance of the model.</li>
 </ul>
+<table>
+<thead>
+<tr>
+<th><strong>Investigation Question</strong></th>
+<th><strong>Findings</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. What is the total number of records in the dataset?</td>
+<td>There are approximately 490578 crimes in the dataset.</td>
+</tr>
+<tr>
+<td>2. What is the proportion of missing values in the dataset?</td>
+<td>The dataset has around 4.8% of the missing data.</td>
+</tr>
+<tr>
+<td>3. What are the causes of crimes?</td>
+<td>There are 17 causes of crime in the city of Baton Rogue.</td>
+</tr>
+<tr>
+<td>4. What are the top-committed crimes?</td>
+<td>Theft and Battery were committed the highest number of times.</td>
+</tr>
+<tr>
+<td>5. Which article/section of law was violated the highest number of times?</td>
+<td>Article number 13:56 and 13:35 is at the top of the list of violation.</td>
+</tr>
+<tr>
+<td>6. Which district(complete district) reported the highest number of crimes?</td>
+<td>District 2C3 had the highest crime rate, which is 4.79%.</td>
+</tr>
+<tr>
+<td>7. How many districts are in the dataset, and what is the number of districts that constitute the 50% of the total cases?</td>
+<td>There are total 87 Districts (complete districts), out of which 18 districts holds the 50% of the total crime.</td>
+</tr>
+<tr>
+<td>8. What the average crime rate in top 18 district compared to the remaining districts?</td>
+<td>Average crime rate in the top 18 districts is 2.74%, while 0.73% in the remaining districts.</td>
+</tr>
+<tr>
+<td>9. In top 18 districts, what were the most violent streets?</td>
+<td>Plank was the most violent street, followed by the Florida street.</td>
+</tr>
+<tr>
+<td>10. What proportion of crimes do the top 10 streets hold in the 18 districts?</td>
+<td>Out of 2500 streets, the top 10 streets hold 23% of the total crime in the 18 districts, which is around 11% of the total crimes in the dataset.</td>
+</tr>
+<tr>
+<td>11. At what time of the day, most of the crimes were committed?</td>
+<td>The highest number of crimes were committed between 3PM to 12AM, which is 54% of the total crimes.</td>
+</tr>
+<tr>
+<td>12. How do the trend looks like for this data, and what are the key observations?</td>
+<td><strong>a.</strong> The number of crime rate had decreased over the period of 10 years by approximately 55%. <strong>b.</strong> The number of crimes spikes in the beginning of the year and start declining after the mid of the year.</td>
+</tr>
+</tbody>
+</table>
 <ul class="pa0">
   
 </ul>
